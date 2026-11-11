@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nebras Jafail | Data Scientist in Banking</title>
+<meta name="description" content="Portfolio of Nebras Jafail, a Mathematics & Computer Science graduate working at the intersection of Data Science, AI, and FinTech.">
+<meta property="og:title" content="Nebras Jafail | Data Scientist in Banking">
+<meta property="og:description" content="Projects and research at the intersection of Data Science, AI, and FinTech.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="images/profile.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#141A22;--panel:#1E2733;--text:#F2EFE8;--muted:#A9B4C2;--thread:#4A5A6C;--thread-hi:#8FA3B8;--accent:#7FC2B8;--onaccent:#10161D;
+  --serif:'Fraunces',Georgia,serif;--sans:'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+:root[data-theme="light"]{
+  --bg:#F4F1EC;--panel:#E9E4DA;--text:#1A212B;--muted:#4A5564;--thread:#B7B0A2;--thread-hi:#5B6B7D;--accent:#2A6560;--onaccent:#F4F1EC;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 var(--sans);transition:background .3s,color .3s}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
+.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:1.25rem}
+p{margin:0 0 1rem;max-width:68ch}
+/* nav */
+header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--thread)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
+.brand{font-family:var(--serif);font-weight:600;color:var(--text);text-decoration:none;font-size:1.1rem}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.nav ul a{display:block;padding:10px 12px;color:var(--muted);text-decoration:none;font-size:.95rem;font-weight:500;border-radius:4px}
+.nav ul a:hover{color:var(--text)}
+.ctrl{display:flex;gap:8px;align-items:center}
+button{font:inherit;cursor:pointer}
+.icon-btn{background:none;border:1px solid var(--thread-hi);color:var(--text);border-radius:4px;padding:8px 12px;font-size:.9rem;min-height:40px}
+.icon-btn:hover{border-color:var(--accent);color:var(--accent)}
+#menuBtn{display:none}
+/* hero */
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--thread)}
+#weave{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero .wrap{position:relative;padding-top:clamp(56px,12vw,120px);padding-bottom:clamp(56px,12vw,110px);pointer-events:none}
+.hero .wrap>*{pointer-events:auto}
+.hero-grid{display:flex;gap:40px;align-items:center;flex-wrap:wrap}
+.hero-text{flex:1 1 380px}
+.hero h1{font-size:clamp(2.6rem,8vw,4.8rem);letter-spacing:-.01em}
+.role{font-family:var(--serif);font-size:clamp(1.2rem,3vw,1.6rem);color:var(--accent);margin:.6rem 0 1.4rem}
+.welcome{font-size:1.15rem;background:color-mix(in srgb,var(--bg) 78%,transparent);padding:2px 0}
+.btn{display:inline-block;background:var(--accent);color:var(--onaccent);font-weight:600;text-decoration:none;padding:14px 26px;border-radius:4px;margin-top:.6rem;transition:transform .2s}
+.btn:hover{transform:translateX(4px)}
+.photo{width:200px;height:250px;flex:0 0 auto;border:1px solid var(--thread-hi);padding:8px;background:var(--panel);position:relative}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+.photo.hide{display:none}
+/* sections + thread dividers */
+section{padding:72px 0 0}
+.divider{height:14px;margin-top:72px;position:relative;cursor:default}
+.divider::before,.divider::after{content:"";position:absolute;left:0;right:0;height:1px;background:var(--thread);transition:background .3s,transform .4s}
+.divider::before{top:3px}.divider::after{top:10px;transform:scaleX(.55);transform-origin:left}
+.divider:hover::before{background:var(--accent)}
+.divider:hover::after{background:var(--thread-hi);transform:scaleX(1)}
+.about-grid{display:grid;grid-template-columns:1fr;gap:32px}
+.skills{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
+.skills li,.tools li{border:1px solid var(--thread-hi);padding:5px 12px;border-radius:999px;font-size:.95rem}
+/* projects */
+.projects{list-style:none;margin:0;padding:0;border-top:1px solid var(--thread)}
+.project{position:relative;border-bottom:1px solid var(--thread);transition:background .3s}
+.project::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--accent);transition:width .45s ease}
+.project:hover::after,.project:focus-within::after{width:100%}
+.project:hover,.project:focus-within{background:var(--panel)}
+.project-btn{all:unset;box-sizing:border-box;display:block;width:100%;padding:26px 16px;cursor:pointer}
+.project-btn:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
+.project h3{font-size:clamp(1.25rem,3vw,1.6rem);margin-bottom:.5rem;transition:transform .3s}
+.project:hover h3{transform:translateX(8px)}
+.project p{color:var(--muted);margin:0 0 .6rem}
+.more{color:var(--accent);font-weight:600;font-size:.95rem}
+.tools{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:1rem 0 0}
+.tools li{border-radius:4px}
+/* lists */
+.entry{border-left:2px solid var(--thread-hi);padding:2px 0 2px 20px;margin-bottom:1.4rem;transition:border-color .3s}
+.entry:hover{border-color:var(--accent)}
+.entry h3{font-size:1.2rem;margin-bottom:.3rem}
+.entry p{margin:0;color:var(--muted)}
+.contact-list{list-style:none;padding:0;margin:0;border-top:1px solid var(--thread)}
+.contact-list li{border-bottom:1px solid var(--thread);display:flex;gap:16px;flex-wrap:wrap;padding:16px 0}
+.contact-list span{min-width:90px;color:var(--muted)}
+.contact-list a{word-break:break-all}
+footer{margin-top:80px;padding:28px 0 40px;border-top:1px solid var(--thread);color:var(--muted);font-size:.95rem}
+/* dialog */
+dialog{border:1px solid var(--thread-hi);background:var(--bg);color:var(--text);padding:0;width:min(680px,92vw);max-height:88vh;border-radius:6px}
+dialog::backdrop{background:rgba(8,11,15,.7)}
+.dlg-in{padding:32px;position:relative}
+.dlg-in h2{font-size:1.6rem;padding-right:90px}
+.dlg-close{position:absolute;top:20px;right:20px}
+.dlg-in .links{margin-top:1rem}
+@media (max-width:700px){
+  dialog{width:100vw;height:100vh;max-width:100vw;max-height:100vh;border-radius:0;border:0}
+  .dlg-in{padding:24px 20px;min-height:100%}
+  #menuBtn{display:inline-block}
+  .nav ul{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--thread);padding:8px 24px}
+  .nav ul.open{display:flex}
+}
+@media (min-width:760px){.about-grid{grid-template-columns:1.4fr 1fr}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Nebras Jafail</a>
+    <nav aria-label="Main"><ul id="navList">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul></nav>
+    <div class="ctrl">
+      <button class="icon-btn" id="themeBtn" type="button" aria-pressed="true">Dark mode</button>
+      <button class="icon-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navList">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <canvas id="weave" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1>Nebras Jafail</h1>
+          <p class="role">Data Scientist in Banking Industry</p>
+          <p class="welcome">Welcome! I’m Nebras, a Mathematics &amp; Computer Science graduate exploring the intersection of Data Science, AI, and FinTech. Take a look around at my projects and research.</p>
+          <a class="btn" href="#projects">View my work</a>
+        </div>
+        <div class="photo" id="photoBox"><img src="images/profile.jpg" alt="Portrait of Nebras Jafail" width="184" height="234" id="photo"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section id="about">
+      <h2>About me</h2>
+      <div class="about-grid">
+        <div>
+          <p>Mathematics &amp; Computer Science graduate from the University of Bahrain, with a strong interest in Data Science, Artificial Intelligence, and technology. My interdisciplinary background combines mathematical and analytical thinking with practical programming and data skills.</p>
+          <p>I enjoy working with data, developing computational solutions, and exploring how AI can be applied to real-world problems.</p>
+          <p>During the CERN Summer Student Programme, I worked on an LLM-powered knowledge and chatbot project for the LHCb experiment, gaining hands-on experience with data pipelines, web and document data, APIs, vector databases, information retrieval, RAG, Linux, and AI technologies.</p>
+          <p>I also have experience in student leadership, innovation competitions, and international technology initiatives.</p>
+        </div>
+        <div>
+          <h3 style="font-size:1.2rem;margin-bottom:.8rem">Skills and tools</h3>
+          <ul class="skills">
+            <li>Python</li><li>Java</li><li>SQL</li><li>Databases</li><li>Data analysis</li><li>ETL</li><li>Git</li><li>Linux</li><li>APIs</li><li>Vector Databases</li><li>Information Retrieval</li><li>RAG</li><li>BCI/Signal Processing</li><li>JavaScript</li><li>PHP</li><li>MySQL</li><li>CI/CD</li><li>Agile SDLC</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <ul class="projects" id="projectList"></ul>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <section id="experience">
+      <h2>Work / Research Experience</h2>
+      <div class="entry">
+        <h3>CERN Summer Student Programme</h3>
+        <p>Developed an LLM-powered knowledge base and chatbot project for the LHCb experiment using data pipelines, vector databases, RAG, and APIs.</p>
+      </div>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <section id="education">
+      <h2>Education &amp; Certifications</h2>
+      <div class="entry"><h3>B.Sc. in Mathematics &amp; Computer Science</h3><p>University of Bahrain</p></div>
+      <div class="entry"><h3>CERN Summer Student Programme</h3><p>LLM &amp; RAG focus</p></div>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <section id="leadership">
+      <h2>Leadership &amp; Initiatives</h2>
+      <div class="entry"><p>Student leadership roles, innovation competitions, and international technology initiatives.</p></div>
+    </section>
+
+    <div class="divider" aria-hidden="true"></div>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:nebrasjafail@gmail.com">nebrasjafail@gmail.com</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/nebras-jafail-452044341" target="_blank" rel="noopener">linkedin.com/in/nebras-jafail-452044341</a></li>
+        <li><span>GitHub</span><a href="https://github.com/NebrasJafail" target="_blank" rel="noopener">github.com/NebrasJafail</a></li>
+      </ul>
+    </section>
+  </div>
+  <footer><div class="wrap">Nebras Jafail</div></footer>
+</main>
+
+<dialog id="dlg" aria-labelledby="dlgTitle">
+  <div class="dlg-in">
+    <button class="icon-btn dlg-close" id="dlgClose" type="button" aria-label="Close project details">Close</button>
+    <h2 id="dlgTitle"></h2>
+    <p id="dlgSummary" style="color:var(--muted)"></p>
+    <p id="dlgDetails"></p>
+    <ul class="tools" id="dlgTools"></ul>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  var projects=[
+    {id:"project-1",title:"Banking Transaction Management System (Java, SQL, JDBC)",
+     summary:"Developed a Java-based banking application using Object-Oriented Programming (OOP) principles to simulate core banking workflows.",
+     details:"Designed customer, account, and transaction management modules to support core banking workflows. Integrated JDBC with relational databases to perform CRUD operations and maintain data integrity. Implemented transaction processing features including deposits, withdrawals, validation, and transaction history tracking. Applied software development principles to build maintainable and structured application components.",
+     tools:["Java","SQL","JDBC","Relational Databases","OOP"]},
+    {id:"project-2",title:"SmartBank Analytics Platform (Python, SQL, Data Analytics)",
+     summary:"Developed a modular banking analytics platform using Object-Oriented Programming (OOP) principles to manage customer, account, and transaction workflows.",
+     details:"Designed application components for banking systems, including customer management, account operations, and transaction processing. Implemented SQL-based data management and relational database concepts to support banking analytics and data integrity. Built analytical features to calculate financial KPIs, including deposits, withdrawals, average balances, and customer statistics. Applied data analysis techniques to generate banking insights and support data-driven decision-making. Designed the platform architecture for future SQLite integration, automated reporting, and scalable data pipelines.",
+     tools:["Python","SQL","Data Analytics","OOP","Relational Databases"]},
+    {id:"project-3",title:"NeuroEgo – Brain-Computer Interface (BCI) & Signal Processing",
+     summary:"Founded and developed an innovative BCI concept translating neural activity into actionable outputs such as text, speech, and commands.",
+     details:"Applied analytical, signal-processing, and optimization techniques to explore AI-driven assistive technology and social-impact applications.",
+     tools:["BCI","Signal Processing","Optimization"]},
+    {id:"project-4",title:"Algorithm Optimization for High-Precision Numerical Systems",
+     summary:"Integrated Newton’s Method with Binary Search to improve numerical precision and convergence in financial valuation models.",
+     details:"Applied optimization techniques to asset pricing and Discounted Cash Flow (DCF) analysis.",
+     tools:["Python","Mathematics","Numerical Optimization","DCF Analysis"]},
+    {id:"project-5",title:"Full-Stack & Agile Web Development (Selected Projects - Course Management System)",
+     summary:"Led a 5-member Agile team to build a secure PHP/MySQL application with role-based access control and full CRUD functionality to ensure Data Integrity and Security.",
+     details:"Developed web applications using PHP, MySQL, GitHub, CI/CD pipelines, and Agile SDLC practices to ensure iterative delivery and system stability.",
+     tools:["JavaScript","PHP","MySQL","Git","CI/CD","Agile SDLC"]}
+  ];
+  var list=document.getElementById('projectList'),dlg=document.getElementById('dlg'),lastBtn=null;
+  projects.forEach(function(p){
+    var li=document.createElement('li');li.className='project';li.id=p.id+'-row';
+    var b=document.createElement('button');b.type='button';b.className='project-btn';
+    b.setAttribute('aria-haspopup','dialog');
+    var h=document.createElement('h3');h.textContent=p.title;
+    var s=document.createElement('p');s.textContent=p.summary;
+    var m=document.createElement('span');m.className='more';m.textContent='View project details';
+    b.append(h,s,m);li.appendChild(b);list.appendChild(li);
+    b.addEventListener('click',function(){lastBtn=b;openProject(p.id,true)});
+  });
+  function openProject(id,setHash){
+    var p=projects.filter(function(x){return x.id===id})[0];if(!p)return;
+    document.getElementById('dlgTitle').textContent=p.title;
+    document.getElementById('dlgSummary').textContent=p.summary;
+    document.getElementById('dlgDetails').textContent=p.details;
+    var t=document.getElementById('dlgTools');t.innerHTML='';
+    p.tools.forEach(function(x){var li=document.createElement('li');li.textContent=x;t.appendChild(li)});
+    if(!dlg.open)dlg.showModal();
+    if(setHash){try{history.replaceState(null,'','#'+id)}catch(e){location.hash=id}}
+  }
+  function closeFx(){
+    try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}
+    if(lastBtn)lastBtn.focus();
+  }
+  dlg.addEventListener('close',closeFx);
+  document.getElementById('dlgClose').addEventListener('click',function(){dlg.close()});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
+  function fromHash(){
+    var id=location.hash.slice(1);
+    if(/^project-\d+$/.test(id))openProject(id,false);
+    else if(dlg.open)dlg.close();
+  }
+  window.addEventListener('hashchange',fromHash);fromHash();
+
+  /* theme */
+  var root=document.documentElement,tb=document.getElementById('themeBtn');
+  function setTheme(t){root.setAttribute('data-theme',t);tb.textContent=t==='dark'?'Dark mode':'Light mode';tb.setAttribute('aria-pressed',t==='dark');try{localStorage.setItem('theme',t)}catch(e){};colors()}
+  try{var saved=localStorage.getItem('theme');if(saved)root.setAttribute('data-theme',saved)}catch(e){}
+  tb.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark')});
+  tb.textContent=root.getAttribute('data-theme')==='dark'?'Dark mode':'Light mode';
+  tb.setAttribute('aria-pressed',root.getAttribute('data-theme')==='dark');
+
+  /* mobile menu */
+  var mb=document.getElementById('menuBtn'),nl=document.getElementById('navList');
+  mb.addEventListener('click',function(){var o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
+  nl.addEventListener('click',function(e){if(e.target.tagName==='A'){nl.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+
+  /* photo fallback */
+  var ph=document.getElementById('photo');
+  function hidePhoto(){document.getElementById('photoBox').classList.add('hide')}
+  ph.addEventListener('error',hidePhoto);
+  if(ph.complete&&ph.naturalWidth===0)hidePhoto();
+
+  /* woven grid */
+  var cv=document.getElementById('weave'),cx=cv.getContext('2d'),W=0,H=0,dpr=1,gap=30,mx=-999,my=-999,c1,c2;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,raf=null;
+  function colors(){var s=getComputedStyle(root);c1=s.getPropertyValue('--thread').trim();c2=s.getPropertyValue('--accent').trim();draw()}
+  function size(){var r=cv.parentNode.getBoundingClientRect();dpr=window.devicePixelRatio||1;W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);draw()}
+  function bend(x,y){var dx=x-mx,dy=y-my,d=Math.sqrt(dx*dx+dy*dy),R=130;if(d>=R||d===0)return[0,0];var f=(1-d/R);f=f*f*26;return[dx/d*f,dy/d*f]}
+  function draw(){
+    if(!W)return;cx.clearRect(0,0,W,H);cx.lineWidth=1;
+    var step=8,i,x,y,o;
+    for(var r=0;r*gap<H;r++){ /* horizontal threads */
+      y=r*gap+.5;cx.beginPath();cx.strokeStyle=(r%4===0)?c2:c1;cx.globalAlpha=(r%4===0)?.55:.5;
+      for(x=0;x<=W;x+=step){o=bend(x,y);x===0?cx.moveTo(x+o[0],y+o[1]):cx.lineTo(x+o[0],y+o[1])}
+      cx.stroke();
+    }
+    for(var c=0;c*gap<W;c++){ /* vertical threads, drawn over/under alternately via dash gaps */
+      x=c*gap+.5;cx.beginPath();cx.strokeStyle=(c%4===0)?c2:c1;cx.globalAlpha=(c%4===0)?.55:.5;
+      for(y=0;y<=H;y+=step){o=bend(x,y);var seg=Math.floor(y/gap)%2===c%2;
+        if(y===0||!seg){cx.moveTo(x+o[0],y+o[1])}else{cx.lineTo(x+o[0],y+o[1])}}
+      cx.stroke();
+    }
+    cx.globalAlpha=1;
+  }
+  function move(e){var r=cv.getBoundingClientRect();var t=e.touches?e.touches[0]:e;mx=t.clientX-r.left;my=t.clientY-r.top;if(!raf)raf=requestAnimationFrame(function(){raf=null;draw()})}
+  function leave(){mx=my=-999;draw()}
+  if(!reduce){var hero=cv.parentNode;hero.addEventListener('pointermove',move);hero.addEventListener('pointerleave',leave);hero.addEventListener('touchmove',move,{passive:true});hero.addEventListener('touchend',leave)}
+  window.addEventListener('resize',size);
+  colors();size();
+})();
+</script>
+</body>
+</html>
