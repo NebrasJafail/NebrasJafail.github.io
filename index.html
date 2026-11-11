@@ -3,326 +3,165 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Nebras Jafail | Data Scientist in Banking</title>
-<meta name="description" content="Portfolio of Nebras Jafail, a Mathematics & Computer Science graduate working at the intersection of Data Science, AI, and FinTech.">
-<meta property="og:title" content="Nebras Jafail | Data Scientist in Banking">
-<meta property="og:description" content="Projects and research at the intersection of Data Science, AI, and FinTech.">
-<meta property="og:type" content="website">
-<meta property="og:image" content="images/profile.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<title>Nebras Jafail | Mathematician & Data Scientist</title>
+<meta name="description" content="Portfolio of Nebras Jafail: CERN Summer Student, Mastercard Challenge finalist, building AI that helps people. Next step: data science in banking.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Hanken+Grotesk:wght@400;600&family=Noto+Naskh+Arabic:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#141A22;--panel:#1E2733;--text:#F2EFE8;--muted:#A9B4C2;--thread:#4A5A6C;--thread-hi:#8FA3B8;--accent:#7FC2B8;--onaccent:#10161D;
-  --serif:'Fraunces',Georgia,serif;--sans:'Public Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
-}
-:root[data-theme="light"]{
-  --bg:#F4F1EC;--panel:#E9E4DA;--text:#1A212B;--muted:#4A5564;--thread:#B7B0A2;--thread-hi:#5B6B7D;--accent:#2A6560;--onaccent:#F4F1EC;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px}
-body{margin:0;background:var(--bg);color:var(--text);font:400 1.0625rem/1.65 var(--sans);transition:background .3s,color .3s}
-a{color:var(--accent)}
-:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:2px}
-.wrap{max-width:980px;margin:0 auto;padding:0 24px}
+:root{--bg:#1B0A10;--panel:#2A1019;--ink:#F4EBDD;--muted:#C9B5AC;--gold:#D4AF5F;--line:#5A2A38;--btn:#D4AF5F;--onbtn:#1B0A10;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Hanken Grotesk',system-ui,sans-serif}
+:root[data-theme=light]{--bg:#F7F0E6;--panel:#EFE4D6;--ink:#2B0F18;--muted:#6B4A52;--gold:#8A6420;--line:#D5C0B0;--btn:#5C1A2B;--onbtn:#F7F0E6}
+:root[dir=rtl]{--serif:'Noto Naskh Arabic',serif;--sans:'IBM Plex Sans Arabic',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.06rem/1.7 var(--sans);transition:background .3s,color .3s}
+a{color:var(--gold)}:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.w{max-width:960px;margin:0 auto;padding:0 22px}
 h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.15;margin:0}
-h2{font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:1.25rem}
-p{margin:0 0 1rem;max-width:68ch}
-/* nav */
-header.nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--thread)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:60px}
-.brand{font-family:var(--serif);font-weight:600;color:var(--text);text-decoration:none;font-size:1.1rem}
-.nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0}
-.nav ul a{display:block;padding:10px 12px;color:var(--muted);text-decoration:none;font-size:.95rem;font-weight:500;border-radius:4px}
-.nav ul a:hover{color:var(--text)}
-.ctrl{display:flex;gap:8px;align-items:center}
+h2{font-size:clamp(1.9rem,4.5vw,2.6rem);margin-bottom:1.2rem}p{margin:0 0 1rem;max-width:66ch}
+section{padding:76px 0 0}
+header{position:sticky;top:0;z-index:9;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:58px;flex-wrap:wrap}
+.brand{font:600 1.3rem var(--serif);color:var(--ink);text-decoration:none}
+nav a{color:var(--muted);text-decoration:none;padding:8px 9px;font-size:.93rem}nav a:hover{color:var(--ink)}
 button{font:inherit;cursor:pointer}
-.icon-btn{background:none;border:1px solid var(--thread-hi);color:var(--text);border-radius:4px;padding:8px 12px;font-size:.9rem;min-height:40px}
-.icon-btn:hover{border-color:var(--accent);color:var(--accent)}
-#menuBtn{display:none}
-/* hero */
-.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--thread)}
-#weave{position:absolute;inset:0;width:100%;height:100%;display:block}
-.hero .wrap{position:relative;padding-top:clamp(56px,12vw,120px);padding-bottom:clamp(56px,12vw,110px);pointer-events:none}
-.hero .wrap>*{pointer-events:auto}
-.hero-grid{display:flex;gap:40px;align-items:center;flex-wrap:wrap}
-.hero-text{flex:1 1 380px}
-.hero h1{font-size:clamp(2.6rem,8vw,4.8rem);letter-spacing:-.01em}
-.role{font-family:var(--serif);font-size:clamp(1.2rem,3vw,1.6rem);color:var(--accent);margin:.6rem 0 1.4rem}
-.welcome{font-size:1.15rem;background:color-mix(in srgb,var(--bg) 78%,transparent);padding:2px 0}
-.btn{display:inline-block;background:var(--accent);color:var(--onaccent);font-weight:600;text-decoration:none;padding:14px 26px;border-radius:4px;margin-top:.6rem;transition:transform .2s}
-.btn:hover{transform:translateX(4px)}
-.photo{width:200px;height:250px;flex:0 0 auto;border:1px solid var(--thread-hi);padding:8px;background:var(--panel);position:relative}
-.photo img{width:100%;height:100%;object-fit:cover;display:block}
-.photo.hide{display:none}
-/* sections + thread dividers */
-section{padding:72px 0 0}
-.divider{height:14px;margin-top:72px;position:relative;cursor:default}
-.divider::before,.divider::after{content:"";position:absolute;left:0;right:0;height:1px;background:var(--thread);transition:background .3s,transform .4s}
-.divider::before{top:3px}.divider::after{top:10px;transform:scaleX(.55);transform-origin:left}
-.divider:hover::before{background:var(--accent)}
-.divider:hover::after{background:var(--thread-hi);transform:scaleX(1)}
-.about-grid{display:grid;grid-template-columns:1fr;gap:32px}
-.skills{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:0}
-.skills li,.tools li{border:1px solid var(--thread-hi);padding:5px 12px;border-radius:999px;font-size:.95rem}
-/* projects */
-.projects{list-style:none;margin:0;padding:0;border-top:1px solid var(--thread)}
-.project{position:relative;border-bottom:1px solid var(--thread);transition:background .3s}
-.project::after{content:"";position:absolute;left:0;bottom:-1px;height:2px;width:0;background:var(--accent);transition:width .45s ease}
-.project:hover::after,.project:focus-within::after{width:100%}
-.project:hover,.project:focus-within{background:var(--panel)}
-.project-btn{all:unset;box-sizing:border-box;display:block;width:100%;padding:26px 16px;cursor:pointer}
-.project-btn:focus-visible{outline:3px solid var(--accent);outline-offset:-3px}
-.project h3{font-size:clamp(1.25rem,3vw,1.6rem);margin-bottom:.5rem;transition:transform .3s}
-.project:hover h3{transform:translateX(8px)}
-.project p{color:var(--muted);margin:0 0 .6rem}
-.more{color:var(--accent);font-weight:600;font-size:.95rem}
-.tools{display:flex;flex-wrap:wrap;gap:8px;list-style:none;padding:0;margin:1rem 0 0}
-.tools li{border-radius:4px}
-/* lists */
-.entry{border-left:2px solid var(--thread-hi);padding:2px 0 2px 20px;margin-bottom:1.4rem;transition:border-color .3s}
-.entry:hover{border-color:var(--accent)}
-.entry h3{font-size:1.2rem;margin-bottom:.3rem}
-.entry p{margin:0;color:var(--muted)}
-.contact-list{list-style:none;padding:0;margin:0;border-top:1px solid var(--thread)}
-.contact-list li{border-bottom:1px solid var(--thread);display:flex;gap:16px;flex-wrap:wrap;padding:16px 0}
-.contact-list span{min-width:90px;color:var(--muted)}
-.contact-list a{word-break:break-all}
-footer{margin-top:80px;padding:28px 0 40px;border-top:1px solid var(--thread);color:var(--muted);font-size:.95rem}
-/* dialog */
-dialog{border:1px solid var(--thread-hi);background:var(--bg);color:var(--text);padding:0;width:min(680px,92vw);max-height:88vh;border-radius:6px}
-dialog::backdrop{background:rgba(8,11,15,.7)}
-.dlg-in{padding:32px;position:relative}
-.dlg-in h2{font-size:1.6rem;padding-right:90px}
-.dlg-close{position:absolute;top:20px;right:20px}
-.dlg-in .links{margin-top:1rem}
-@media (max-width:700px){
-  dialog{width:100vw;height:100vh;max-width:100vw;max-height:100vh;border-radius:0;border:0}
-  .dlg-in{padding:24px 20px;min-height:100%}
-  #menuBtn{display:inline-block}
-  .nav ul{display:none;position:absolute;top:60px;left:0;right:0;flex-direction:column;background:var(--bg);border-bottom:1px solid var(--thread);padding:8px 24px}
-  .nav ul.open{display:flex}
-}
-@media (min-width:760px){.about-grid{grid-template-columns:1.4fr 1fr}}
-@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.sm{background:none;border:1px solid var(--line);color:var(--ink);border-radius:4px;padding:6px 12px;margin-inline-start:6px;min-height:38px}.sm:hover{border-color:var(--gold)}
+.hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line);--mx:72%;--my:38%}
+.spots,.glow{position:absolute;inset:0;pointer-events:none}
+.spots{background:radial-gradient(circle at 25% 30%,var(--gold) 0 7px,transparent 8px) 0 0/97px 83px,radial-gradient(circle at 70% 65%,var(--gold) 0 4px,transparent 5px) 0 0/61px 71px,radial-gradient(circle at 40% 80%,var(--gold) 0 9px,transparent 10px) 0 0/131px 117px;-webkit-mask-image:radial-gradient(circle 240px at var(--mx) var(--my),#000,transparent);mask-image:radial-gradient(circle 240px at var(--mx) var(--my),#000,transparent)}
+.glow{background:radial-gradient(circle 300px at var(--mx) var(--my),color-mix(in srgb,var(--gold) 22%,transparent),transparent)}
+.hero .w{position:relative;padding-top:clamp(64px,13vw,130px);padding-bottom:clamp(60px,11vw,110px);display:flex;gap:36px;align-items:center;flex-wrap:wrap}
+.ht{flex:1 1 380px}h1{font-size:clamp(3rem,9vw,5.6rem);letter-spacing:-.01em}
+.mean{font:500 1.35rem var(--serif);color:var(--gold);margin:.5rem 0 1rem}
+.btn{display:inline-block;background:var(--btn);color:var(--onbtn);font-weight:600;text-decoration:none;padding:13px 24px;border-radius:4px;margin:.4rem .4rem 0 0;border:0}
+.btn.o{background:none;color:var(--ink);border:1px solid var(--gold)}
+.ph{width:200px;height:250px;border:1px solid var(--gold);padding:8px;background:var(--panel)}.ph img{width:100%;height:100%;object-fit:cover}
+.recog{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));border-bottom:1px solid var(--line)}
+.recog li{padding:20px 18px;border-inline-end:1px solid var(--line);font-size:.97rem;color:var(--muted)}.recog b{display:block;color:var(--ink);font:600 1.15rem var(--serif)}
+.tl{list-style:none;margin:0;padding:0;border-inline-start:2px solid var(--line)}
+.tl li{padding:0 0 22px 22px;position:relative}[dir=rtl] .tl li{padding:0 22px 22px 0}
+.tl li::before{content:"";position:absolute;inset-inline-start:-7px;top:9px;width:12px;height:12px;border-radius:50%;background:var(--gold)}
+.tl time{color:var(--gold);font-weight:600;font-size:.92rem;display:block}.tl h3{font-size:1.25rem}.tl p{margin:.2rem 0 0;color:var(--muted)}
+.proj{display:grid;gap:0;border-top:1px solid var(--line)}
+.proj article{padding:24px 6px;border-bottom:1px solid var(--line)}.proj article:hover{background:var(--panel)}
+.proj h3{font-size:1.45rem}.proj p{color:var(--muted);margin:.4rem 0}.tag{font-size:.85rem;color:var(--gold)}
+blockquote{margin:0 0 26px;padding-inline-start:20px;border-inline-start:3px solid var(--gold);font:500 1.5rem/1.35 var(--serif)}
+blockquote cite{display:block;font:400 .95rem var(--sans);color:var(--muted);margin-top:.5rem}
+.chat{border:1px solid var(--line);background:var(--panel);border-radius:6px;padding:18px}
+#log{max-height:340px;overflow:auto;display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.m{padding:10px 14px;border-radius:6px;max-width:88%}.m.b{background:var(--bg);border:1px solid var(--line)}.m.u{background:var(--btn);color:var(--onbtn);align-self:flex-end}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}.chips button{background:none;border:1px solid var(--line);color:var(--ink);border-radius:999px;padding:6px 13px;font-size:.92rem}.chips button:hover{border-color:var(--gold)}
+.chat form{display:flex;gap:8px}.chat input{flex:1;min-width:0;padding:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:4px;font:inherit}
+.roles{list-style:none;margin:0 0 1.4rem;padding:0;display:flex;flex-wrap:wrap;row-gap:6px}.roles li{font:600 clamp(1.5rem,4.5vw,2.6rem)/1.2 var(--serif);padding:0 22px;border-inline-start:1px solid var(--gold)}.roles li:first-child{padding-inline-start:0;border:0}
+.aq{display:block;direction:rtl;text-align:left}[dir=rtl] .aq{text-align:right}
+.spotbtn{display:inline-flex;align-items:center;gap:12px;background:none;border:1px solid var(--gold);color:var(--ink);border-radius:999px;padding:8px 20px 8px 10px}.spotbtn:hover{background:var(--panel)}.spotbtn i{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:radial-gradient(circle at 30% 35%,var(--gold) 0 3px,transparent 4px),radial-gradient(circle at 68% 62%,var(--gold) 0 4px,transparent 5px),radial-gradient(circle at 40% 78%,var(--gold) 0 2px,transparent 3px)}
+dialog{border:1px solid var(--gold);background:var(--bg);color:var(--ink);padding:0;width:min(640px,92vw);max-height:90vh;border-radius:6px}dialog::backdrop{background:rgba(10,3,6,.78)}.din{position:relative;padding:34px;overflow:hidden}.din::before{content:"";position:absolute;inset:0;opacity:.17;background:radial-gradient(circle at 25% 30%,var(--gold) 0 7px,transparent 8px) 0 0/97px 83px,radial-gradient(circle at 70% 65%,var(--gold) 0 4px,transparent 5px) 0 0/61px 71px,radial-gradient(circle at 40% 80%,var(--gold) 0 9px,transparent 10px) 0 0/131px 117px}.din>*{position:relative}
+.note{font-size:.88rem;color:var(--muted);margin:10px 0 0}
+.orbs{display:flex;flex-wrap:wrap;gap:24px;padding-bottom:34px}.orb{position:relative;width:68px;height:68px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);text-decoration:none;transition:transform .3s,background .3s,color .3s,box-shadow .3s}.orb:hover,.orb:focus-visible{background:var(--gold);color:var(--bg);transform:translateY(-6px);box-shadow:0 10px 28px color-mix(in srgb,var(--gold) 45%,transparent)}.orb span{position:absolute;top:calc(100% + 10px);font-size:.85rem;color:var(--muted);white-space:nowrap}
+footer{margin-top:80px;padding:26px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.93rem}
+@media(max-width:700px){nav{display:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<header class="nav">
-  <div class="wrap">
-    <a class="brand" href="#top">Nebras Jafail</a>
-    <nav aria-label="Main"><ul id="navList">
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#leadership">Leadership</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul></nav>
-    <div class="ctrl">
-      <button class="icon-btn" id="themeBtn" type="button" aria-pressed="true">Dark mode</button>
-      <button class="icon-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="navList">Menu</button>
-    </div>
-  </div>
-</header>
+<header><div class="w"><a class="brand" href="#top">Nebras Jafail</a>
+<nav aria-label="Main"><a href="#about" data-ar="عني">About</a><a href="#journey" data-ar="رحلتي">Journey</a><a href="#work" data-ar="أعمالي">Work</a><a href="#voices" data-ar="شهادات">Voices</a><a href="#ask" data-ar="اسأل">Ask</a></nav>
+<div><button class="sm" id="langBtn" type="button">عربي</button><button class="sm" id="themeBtn" type="button" aria-pressed="true">Dark</button></div></div></header>
 
-<main id="top">
-  <div class="hero">
-    <canvas id="weave" aria-hidden="true"></canvas>
-    <div class="wrap">
-      <div class="hero-grid">
-        <div class="hero-text">
-          <h1>Nebras Jafail</h1>
-          <p class="role">Data Scientist in Banking Industry</p>
-          <p class="welcome">Welcome! I’m Nebras, a Mathematics &amp; Computer Science graduate exploring the intersection of Data Science, AI, and FinTech. Take a look around at my projects and research.</p>
-          <a class="btn" href="#projects">View my work</a>
-        </div>
-        <div class="photo" id="photoBox"><img src="images/profile.jpg" alt="Portrait of Nebras Jafail" width="184" height="234" id="photo"></div>
-      </div>
-    </div>
-  </div>
+<div class="hero" id="top"><div class="spots"></div><div class="glow"></div><div class="w">
+<div class="ht"><h1>Nebras Jafail</h1>
+<p class="mean" data-ar="نبراس: شعلة مضيئة ونور يهدي الطريق">Nebras (نبراس): a shining flame, a guiding light.</p>
+<p data-ar="رياضيّة تتحول إلى عالمة بيانات. أبني ذكاءً اصطناعياً يخدم الناس، وخطوتي القادمة علم البيانات في القطاع المصرفي.">A mathematician turning into a data scientist. I build AI that helps people, and my next step is data science in banking.</p>
+<a class="btn" href="#ask" data-ar="اسأل نسختي الذكية">Ask my AI twin</a><a class="btn o" id="cv" href="#" data-ar="حمّل السيرة الذاتية">Download CV</a></div>
+<div class="ph"><img src="images/profile.jpg" alt="Nebras Jafail" onerror="this.parentNode.remove()"></div></div></div>
 
-  <div class="wrap">
-    <section id="about">
-      <h2>About me</h2>
-      <div class="about-grid">
-        <div>
-          <p>Mathematics &amp; Computer Science graduate from the University of Bahrain, with a strong interest in Data Science, Artificial Intelligence, and technology. My interdisciplinary background combines mathematical and analytical thinking with practical programming and data skills.</p>
-          <p>I enjoy working with data, developing computational solutions, and exploring how AI can be applied to real-world problems.</p>
-          <p>During the CERN Summer Student Programme, I worked on an LLM-powered knowledge and chatbot project for the LHCb experiment, gaining hands-on experience with data pipelines, web and document data, APIs, vector databases, information retrieval, RAG, Linux, and AI technologies.</p>
-          <p>I also have experience in student leadership, innovation competitions, and international technology initiatives.</p>
-        </div>
-        <div>
-          <h3 style="font-size:1.2rem;margin-bottom:.8rem">Skills and tools</h3>
-          <ul class="skills">
-            <li>Python</li><li>Java</li><li>SQL</li><li>Databases</li><li>Data analysis</li><li>ETL</li><li>Git</li><li>Linux</li><li>APIs</li><li>Vector Databases</li><li>Information Retrieval</li><li>RAG</li><li>BCI/Signal Processing</li><li>JavaScript</li><li>PHP</li><li>MySQL</li><li>CI/CD</li><li>Agile SDLC</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+<ul class="recog">
+<li><b>CERN, LHCb</b><span data-ar="برنامج الطلبة الصيفي 2025، من أفضل طالبتين على مستوى البحرين">Summer Student 2025, top 2 selected nationwide</span></li>
+<li><b>1 of 36</b><span data-ar="من أكثر من 300 طالب في هاكاثون الحوسبة الكمية في CERN">worldwide, from 300+ in the CERN Quantum Computing Hackathon</span></li>
+<li><b>Mastercard</b><span data-ar="نهائيات تحدي الشمول المالي، وبعدها منحة تدريب لمدة سنة">Financial Inclusion Challenge finalist, one-year Academy scholarship</span></li>
+<li><b data-ar="أكثر من 3 من 4">Above 3.0 / 4.0</b><span data-ar="بكالوريوس رياضيات، تخصص فرعي علوم حاسوب، جامعة البحرين">B.Sc. Mathematics, minor Computer Science, University of Bahrain</span></li></ul>
 
-    <div class="divider" aria-hidden="true"></div>
+<section id="vision"><div class="w"><h2 data-ar="إلى أين أتجه">Where I am heading</h2>
+<ul class="roles"><li data-ar="سفيرة">Ambassador</li><li data-ar="دبلوماسية">Diplomat</li><li data-ar="مبتكرة">Innovator</li><li data-ar="عالمة">Scientist</li><li data-ar="رائدة أعمال">Entrepreneur</li></ul>
+<p data-ar="أريد أن أكون سفيرة للعلوم والتكنولوجيا، وأن يكون لعملي أثر في المستقبل.">I want to be an ambassador for science and technology, and to leave a lasting impact on the future.</p>
+<p style="margin-top:1.6rem"><button type="button" id="deepBtn" class="spotbtn" aria-haspopup="dialog"><i></i><span data-ar="من يريد أن يعرف شخصيتي أعمق، فليدخل هنا">Want to know me beyond the CV? Step inside.</span></button></p>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul class="projects" id="projectList"></ul>
-    </section>
+<section id="about"><div class="w"><h2 data-ar="عني">About</h2>
+<p data-ar="عمري تسع سنوات حين قررت أن أكرّس مستقبلي للرياضيات. كثيرون قالوا إنني أصغر من أن أصنع فرقاً، فاخترت أن أكتب قصتي بنفسي، بالأرقام والأحلام.">I was nine when I decided to give my future to mathematics. Many people told me I was too young to make a difference, so I chose to write my own story, with numbers and dreams.</p>
+<p data-ar="اكتشفت علم البيانات فوجدته امتداداً طبيعياً لشغفي: الدقة الرياضية مع حل مشكلات حقيقية. هدفي الأكبر أن أكون سفيرة للعلوم والتكنولوجيا، وأبدأ بعلم البيانات في البنوك.">Data science became the natural extension of that passion: mathematical rigor applied to real problems. My long-term goal is to be an ambassador for science and technology, starting as a data scientist in banking.</p></div></section>
 
-    <div class="divider" aria-hidden="true"></div>
+<section id="journey"><div class="w"><h2 data-ar="رحلتي">Journey</h2><ol class="tl" style="list-style:none">
+<li><time>May – Nov 2024</time><h3>Young Parliamentarians Program</h3><p data-ar="سبعة أشهر مع مجلس الشورى والسفارة البريطانية والاتحاد الأوروبي، وكنت مقرّرة وممثلة لعدة لجان.">Seven months with the Shura Council, the British Embassy and the EU. Rapporteur and representative for several committees.</p></li>
+<li><time>Aug – Oct 2024</time><h3>Mastercard Financial Inclusion Challenge</h3><p data-ar="وصلت فكرتي NeuroEgo إلى النهائيات ضمن أفضل 5 حلول، وقدمتها أمام لجنة تضم Jeffrey Sachs.">My idea NeuroEgo reached the final as one of the top 5 solutions, pitched to a panel including Prof. Jeffrey Sachs.</p></li>
+<li><time>Sep 2024 – Jun 2026</time><h3>Chair, Student Advisory Committee</h3><p data-ar="رئيسة اللجنة الاستشارية الطلابية في قسم الرياضيات وعضو مجلس الطلبة.">Mathematics department, plus member of the Student Council.</p></li>
+<li><time>Jun – Aug 2025</time><h3>CERN Summer Student, LHCb</h3><p data-ar="مشروع مساعد ذكي يجيب عن أسئلة تقنية حول تجربة LHCb، بالتعاون مع منصة الذكاء الاصطناعي التوليدي في قسم تقنية المعلومات بـ CERN. بحثت كيف نجمع التوثيق الحديث من الويب في قاعدة معرفة متجهية ونبقيها محدّثة، ونفذت أجزاء منه.">A chatbot that answers technical questions about the LHCb experiment, working alongside CERN IT's GenAI platform. I researched how to collect up-to-date documentation from the web into a vector knowledge database and keep it current, and implemented parts of it.</p></li>
+<li><time>Jul 2025</time><h3>CERN Quantum Computing Hackathon</h3><p data-ar="واحدة من 36 طالباً مختارين عالمياً.">One of 36 students selected worldwide.</p></li>
+<li><time>2026</time><h3>General Assembly Data Science Bootcamp</h3><p data-ar="تخرجت من جامعة البحرين في يونيو 2026، وأتعلم الآن تعلم الآلة والتعلم العميق بمشاريع تطبيقية.">Graduated from the University of Bahrain in June 2026, now learning machine learning and deep learning through applied projects.</p></li></ol></div></section>
 
-    <section id="experience">
-      <h2>Work / Research Experience</h2>
-      <div class="entry">
-        <h3>CERN Summer Student Programme</h3>
-        <p>Developed an LLM-powered knowledge base and chatbot project for the LHCb experiment using data pipelines, vector databases, RAG, and APIs.</p>
-      </div>
-    </section>
+<section id="work"><div class="w"><h2 data-ar="أعمالي">Work</h2><div class="proj">
+<article><h3>NeuroEgo</h3><p data-ar="فكرة جهاز يحوّل الموجات الدماغية إلى نص وصوت وأوامر لذوي الإعاقة الحركية الشديدة. وصلت الفكرة إلى نهائيات ماستركارد، ولم يُبنَ الجهاز بعد. مشروع التخرج في البوتكامب يبني نموذجاً أولياً: غابة عشوائية على بيانات EEG عامة بدقة اختبار 98.8%، مع واجهة Streamlit على بيانات مسجلة بدون جهاز.">An assistive brain-computer interface idea that turns brain signals into text, speech and commands. The idea reached the Mastercard final; the device itself is not built. My bootcamp capstone builds a software prototype: a Random Forest on a public EEG dataset (98.8% test accuracy) with a Streamlit demo on recorded signals, no hardware.</p><span class="tag">Python · scikit-learn · Streamlit</span></article>
+<article><h3>Bahraini Food Detection</h3><p data-ar="نموذج YOLO مُدرَّب على صور جمعناها بأنفسنا لعشرة أطباق بحرينية، مع تحليل الأخطاء وجولة بيانات ثانية لتحسينه.">A YOLO model fine-tuned on our own dataset of ten Bahraini dishes, with error analysis and a second data round to improve it.</p><span class="tag">YOLO · Roboflow · Streamlit</span></article>
+<article><h3>Bahraini Currency Recognition</h3><p data-ar="تصنيف أوراق الدينار البحريني بالتعلم العميق والتعلم بالنقل، مع تطبيق Streamlit.">Classifying Bahraini dinar notes with deep learning and transfer learning, deployed as a Streamlit app.</p><span class="tag">PyTorch · Transfer learning</span></article>
+<article><h3>Doodle Search &amp; Bahrain Reviews</h3><p data-ar="محرك بحث عن الرسومات بتمثيلات Keras، وتحليل مشاعر آراء مطاعم البحرين مع تصنيف بلا أمثلة سابقة عبر Hugging Face.">A doodle search engine on Keras embeddings, and sentiment plus zero-shot analysis of Bahrain restaurant reviews with Hugging Face.</p><span class="tag">Keras · Hugging Face</span></article>
+<article><h3>Banking Systems</h3><p data-ar="نظام معاملات بنكية بجافا وSQL وJDBC، ومنصة SmartBank لتحليل مؤشرات الحسابات بباثون. وبحثت في دمج طريقة نيوتن مع البحث الثنائي لدقة أعلى في نماذج التقييم المالي.">A Java, SQL and JDBC transaction system, and SmartBank, a Python platform for account KPIs. Also researched combining Newton's method with binary search for precise valuation models.</p><span class="tag">Java · Python · SQL</span></article></div>
+<p style="margin-top:1rem"><a id="gh" href="#" data-ar="كل الأكواد على GitHub">All code on GitHub</a></p></div></section>
 
-    <div class="divider" aria-hidden="true"></div>
+<section id="voices"><div class="w"><h2 data-ar="ماذا يقول عني أساتذتي">What my professors say</h2>
+<blockquote>“…an ambassador for science and woman leadership…”<cite>Dr. Babacar Seck, Assistant Professor of Mathematics, University of Bahrain</cite></blockquote>
+<blockquote>“…exceptional communication skills and leadership qualities.”<cite>Dr. Oliver Thomas, Department of Mathematics, University of Bahrain</cite></blockquote>
+<blockquote>“…exceptional problem-solving skills and creativity.”<cite>Dr. Mayada Shahada, Assistant Professor, University of Bahrain</cite></blockquote></div></section>
 
-    <section id="education">
-      <h2>Education &amp; Certifications</h2>
-      <div class="entry"><h3>B.Sc. in Mathematics &amp; Computer Science</h3><p>University of Bahrain</p></div>
-      <div class="entry"><h3>CERN Summer Student Programme</h3><p>LLM &amp; RAG focus</p></div>
-    </section>
+<section id="ask"><div class="w"><h2 data-ar="اسأل نسختي الذكية">Ask my AI twin</h2>
+<div class="chat"><div id="log" aria-live="polite"></div>
+<div class="chips"><button type="button" data-ar="من هي نبراس؟">Who is Nebras?</button><button type="button" data-ar="ماذا فعلتِ في CERN؟">What did you do at CERN?</button><button type="button" data-ar="حدثيني عن NeuroEgo">Tell me about NeuroEgo</button><button type="button" data-ar="لماذا القطاع المصرفي؟">Why banking?</button></div>
+<form id="f"><input id="q" aria-label="Question" placeholder="Ask about my work, skills or goals" autocomplete="off"><button class="btn" style="margin:0" type="submit" data-ar="إرسال">Send</button></form>
+<p class="note" data-ar="نسخة ذكية تجيب من سيرتي ورسائلي فقط. إن لم تعرف الجواب ستقول ذلك.">An AI twin that answers only from my CV and letters. If it does not know, it says so.</p></div></div></section>
 
-    <div class="divider" aria-hidden="true"></div>
+<section><div class="w"><h2 data-ar="خارج الأكواد: Cheetah">Beyond code: Cheetah</h2>
+<p data-ar="Cheetah علامتي الخاصة للعبايات والبليزرات والبدلات الرسمية بتصميمي، مع تطريز ورسم يدوي. قريباً.">Cheetah is my own label of abayas, blazers and formal pieces I design, with hand embroidery and painting. Launching soon.</p><p><a id="ig" href="#">@cheetah.bhr</a></p></div></section>
 
-    <section id="leadership">
-      <h2>Leadership &amp; Initiatives</h2>
-      <div class="entry"><p>Student leadership roles, innovation competitions, and international technology initiatives.</p></div>
-    </section>
-
-    <div class="divider" aria-hidden="true"></div>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <ul class="contact-list">
-        <li><span>Email</span><a href="mailto:nebrasjafail@gmail.com">nebrasjafail@gmail.com</a></li>
-        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/nebras-jafail-452044341" target="_blank" rel="noopener">linkedin.com/in/nebras-jafail-452044341</a></li>
-        <li><span>GitHub</span><a href="https://github.com/NebrasJafail" target="_blank" rel="noopener">github.com/NebrasJafail</a></li>
-      </ul>
-    </section>
-  </div>
-  <footer><div class="wrap">Nebras Jafail</div></footer>
-</main>
-
-<dialog id="dlg" aria-labelledby="dlgTitle">
-  <div class="dlg-in">
-    <button class="icon-btn dlg-close" id="dlgClose" type="button" aria-label="Close project details">Close</button>
-    <h2 id="dlgTitle"></h2>
-    <p id="dlgSummary" style="color:var(--muted)"></p>
-    <p id="dlgDetails"></p>
-    <ul class="tools" id="dlgTools"></ul>
-  </div>
-</dialog>
+<section id="contact"><div class="w"><h2 data-ar="تواصل">Contact</h2><div class="orbs" id="cl"></div></div></section>
+<dialog id="deep" aria-labelledby="dt"><div class="din"><h2 id="dt" data-ar="ما وراء السيرة الذاتية">Beyond the CV</h2>
+<blockquote><span class="aq" lang="ar">والحظ لو عاثر بصنع أنا حظي 🐆</span><cite data-ar="">And if luck stumbles, I make my own luck.</cite></blockquote>
+<blockquote><span class="aq" lang="ar">وكن لنفسك كل شيء</span><cite data-ar="">Be everything to yourself.</cite></blockquote>
+<blockquote><span class="aq" lang="ar">متى يبين اسمي أكون في واقعي بصمة وأثر</span><cite data-ar="">Wherever my name appears, I want to be a mark and an impact in reality.</cite></blockquote></div></section>
+<button class="sm" id="dx" type="button" data-ar="إغلاق">Close</button></div></dialog>
+<footer><div class="w">© 2026 Nebras Ali Jafail</div></footer>
 
 <script>
 (function(){
-  var projects=[
-    {id:"project-1",title:"Banking Transaction Management System (Java, SQL, JDBC)",
-     summary:"Developed a Java-based banking application using Object-Oriented Programming (OOP) principles to simulate core banking workflows.",
-     details:"Designed customer, account, and transaction management modules to support core banking workflows. Integrated JDBC with relational databases to perform CRUD operations and maintain data integrity. Implemented transaction processing features including deposits, withdrawals, validation, and transaction history tracking. Applied software development principles to build maintainable and structured application components.",
-     tools:["Java","SQL","JDBC","Relational Databases","OOP"]},
-    {id:"project-2",title:"SmartBank Analytics Platform (Python, SQL, Data Analytics)",
-     summary:"Developed a modular banking analytics platform using Object-Oriented Programming (OOP) principles to manage customer, account, and transaction workflows.",
-     details:"Designed application components for banking systems, including customer management, account operations, and transaction processing. Implemented SQL-based data management and relational database concepts to support banking analytics and data integrity. Built analytical features to calculate financial KPIs, including deposits, withdrawals, average balances, and customer statistics. Applied data analysis techniques to generate banking insights and support data-driven decision-making. Designed the platform architecture for future SQLite integration, automated reporting, and scalable data pipelines.",
-     tools:["Python","SQL","Data Analytics","OOP","Relational Databases"]},
-    {id:"project-3",title:"NeuroEgo – Brain-Computer Interface (BCI) & Signal Processing",
-     summary:"Founded and developed an innovative BCI concept translating neural activity into actionable outputs such as text, speech, and commands.",
-     details:"Applied analytical, signal-processing, and optimization techniques to explore AI-driven assistive technology and social-impact applications.",
-     tools:["BCI","Signal Processing","Optimization"]},
-    {id:"project-4",title:"Algorithm Optimization for High-Precision Numerical Systems",
-     summary:"Integrated Newton’s Method with Binary Search to improve numerical precision and convergence in financial valuation models.",
-     details:"Applied optimization techniques to asset pricing and Discounted Cash Flow (DCF) analysis.",
-     tools:["Python","Mathematics","Numerical Optimization","DCF Analysis"]},
-    {id:"project-5",title:"Full-Stack & Agile Web Development (Selected Projects - Course Management System)",
-     summary:"Led a 5-member Agile team to build a secure PHP/MySQL application with role-based access control and full CRUD functionality to ensure Data Integrity and Security.",
-     details:"Developed web applications using PHP, MySQL, GitHub, CI/CD pipelines, and Agile SDLC practices to ensure iterative delivery and system stability.",
-     tools:["JavaScript","PHP","MySQL","Git","CI/CD","Agile SDLC"]}
-  ];
-  var list=document.getElementById('projectList'),dlg=document.getElementById('dlg'),lastBtn=null;
-  projects.forEach(function(p){
-    var li=document.createElement('li');li.className='project';li.id=p.id+'-row';
-    var b=document.createElement('button');b.type='button';b.className='project-btn';
-    b.setAttribute('aria-haspopup','dialog');
-    var h=document.createElement('h3');h.textContent=p.title;
-    var s=document.createElement('p');s.textContent=p.summary;
-    var m=document.createElement('span');m.className='more';m.textContent='View project details';
-    b.append(h,s,m);li.appendChild(b);list.appendChild(li);
-    b.addEventListener('click',function(){lastBtn=b;openProject(p.id,true)});
-  });
-  function openProject(id,setHash){
-    var p=projects.filter(function(x){return x.id===id})[0];if(!p)return;
-    document.getElementById('dlgTitle').textContent=p.title;
-    document.getElementById('dlgSummary').textContent=p.summary;
-    document.getElementById('dlgDetails').textContent=p.details;
-    var t=document.getElementById('dlgTools');t.innerHTML='';
-    p.tools.forEach(function(x){var li=document.createElement('li');li.textContent=x;t.appendChild(li)});
-    if(!dlg.open)dlg.showModal();
-    if(setHash){try{history.replaceState(null,'','#'+id)}catch(e){location.hash=id}}
-  }
-  function closeFx(){
-    try{history.replaceState(null,'',location.pathname+location.search)}catch(e){}
-    if(lastBtn)lastBtn.focus();
-  }
-  dlg.addEventListener('close',closeFx);
-  document.getElementById('dlgClose').addEventListener('click',function(){dlg.close()});
-  dlg.addEventListener('click',function(e){if(e.target===dlg)dlg.close()});
-  function fromHash(){
-    var id=location.hash.slice(1);
-    if(/^project-\d+$/.test(id))openProject(id,false);
-    else if(dlg.open)dlg.close();
-  }
-  window.addEventListener('hashchange',fromHash);fromHash();
+var CFG={cv:"Nebras_Jafail_CV.pdf",linkedin:"",github:"https://github.com/NebrasJafail",instagram:"https://instagram.com/cheetah.bhr",email:"nebrasjafail@gmail.com",chat:""};
+var $=function(s){return document.querySelector(s)},root=document.documentElement,lang="en";
+$("#cv").href=CFG.cv;$("#gh").href=CFG.github;$("#ig").href=CFG.instagram;
+var I={Email:'<path d="M3 5h18v14H3zM3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>',GitHub:'<path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/>',LinkedIn:'<path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>',Instagram:'<g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>'};
+var cl=$("#cl");[["Email","mailto:"+CFG.email],["LinkedIn",CFG.linkedin],["GitHub",CFG.github],["Instagram",CFG.instagram]].forEach(function(c){if(!c[1])return;var a=document.createElement("a");a.className="orb";a.href=c[1];a.setAttribute("aria-label",c[0]);if(c[0]!=="Email"){a.target="_blank";a.rel="noopener"}a.innerHTML='<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">'+I[c[0]]+"</svg><span>"+c[0]+"</span>";cl.appendChild(a)});
+function setLang(l){lang=l;root.lang=l;root.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-ar]").forEach(function(e){if(!e.dataset.en)e.dataset.en=e.textContent;e.textContent=l==="ar"?e.dataset.ar:e.dataset.en});$("#langBtn").textContent=l==="ar"?"English":"عربي";$("#q").placeholder=l==="ar"?"اسألي عن أعمالي ومهاراتي وأهدافي":"Ask about my work, skills or goals";try{localStorage.setItem("lang",l)}catch(x){}}
+$("#langBtn").onclick=function(){setLang(lang==="en"?"ar":"en")};var dd=$("#deep");$("#deepBtn").onclick=function(){dd.showModal()};$("#dx").onclick=function(){dd.close()};dd.addEventListener("click",function(e){if(e.target===dd)dd.close()});
+var tb=$("#themeBtn");function setTheme(t){root.dataset.theme=t;tb.textContent=t==="dark"?"Dark":"Light";tb.setAttribute("aria-pressed",t==="dark");try{localStorage.setItem("theme",t)}catch(x){}}
+tb.onclick=function(){setTheme(root.dataset.theme==="dark"?"light":"dark")};
+try{var t=localStorage.getItem("theme"),l=localStorage.getItem("lang");if(t)setTheme(t);if(l==="ar")setLang("ar")}catch(x){}
+var hero=$(".hero");hero.addEventListener("pointermove",function(e){var r=hero.getBoundingClientRect();hero.style.setProperty("--mx",e.clientX-r.left+"px");hero.style.setProperty("--my",e.clientY-r.top+"px")});
 
-  /* theme */
-  var root=document.documentElement,tb=document.getElementById('themeBtn');
-  function setTheme(t){root.setAttribute('data-theme',t);tb.textContent=t==='dark'?'Dark mode':'Light mode';tb.setAttribute('aria-pressed',t==='dark');try{localStorage.setItem('theme',t)}catch(e){};colors()}
-  try{var saved=localStorage.getItem('theme');if(saved)root.setAttribute('data-theme',saved)}catch(e){}
-  tb.addEventListener('click',function(){setTheme(root.getAttribute('data-theme')==='dark'?'light':'dark')});
-  tb.textContent=root.getAttribute('data-theme')==='dark'?'Dark mode':'Light mode';
-  tb.setAttribute('aria-pressed',root.getAttribute('data-theme')==='dark');
-
-  /* mobile menu */
-  var mb=document.getElementById('menuBtn'),nl=document.getElementById('navList');
-  mb.addEventListener('click',function(){var o=nl.classList.toggle('open');mb.setAttribute('aria-expanded',o)});
-  nl.addEventListener('click',function(e){if(e.target.tagName==='A'){nl.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
-
-  /* photo fallback */
-  var ph=document.getElementById('photo');
-  function hidePhoto(){document.getElementById('photoBox').classList.add('hide')}
-  ph.addEventListener('error',hidePhoto);
-  if(ph.complete&&ph.naturalWidth===0)hidePhoto();
-
-  /* woven grid */
-  var cv=document.getElementById('weave'),cx=cv.getContext('2d'),W=0,H=0,dpr=1,gap=30,mx=-999,my=-999,c1,c2;
-  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches,raf=null;
-  function colors(){var s=getComputedStyle(root);c1=s.getPropertyValue('--thread').trim();c2=s.getPropertyValue('--accent').trim();draw()}
-  function size(){var r=cv.parentNode.getBoundingClientRect();dpr=window.devicePixelRatio||1;W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;cx.setTransform(dpr,0,0,dpr,0,0);draw()}
-  function bend(x,y){var dx=x-mx,dy=y-my,d=Math.sqrt(dx*dx+dy*dy),R=130;if(d>=R||d===0)return[0,0];var f=(1-d/R);f=f*f*26;return[dx/d*f,dy/d*f]}
-  function draw(){
-    if(!W)return;cx.clearRect(0,0,W,H);cx.lineWidth=1;
-    var step=8,i,x,y,o;
-    for(var r=0;r*gap<H;r++){ /* horizontal threads */
-      y=r*gap+.5;cx.beginPath();cx.strokeStyle=(r%4===0)?c2:c1;cx.globalAlpha=(r%4===0)?.55:.5;
-      for(x=0;x<=W;x+=step){o=bend(x,y);x===0?cx.moveTo(x+o[0],y+o[1]):cx.lineTo(x+o[0],y+o[1])}
-      cx.stroke();
-    }
-    for(var c=0;c*gap<W;c++){ /* vertical threads, drawn over/under alternately via dash gaps */
-      x=c*gap+.5;cx.beginPath();cx.strokeStyle=(c%4===0)?c2:c1;cx.globalAlpha=(c%4===0)?.55:.5;
-      for(y=0;y<=H;y+=step){o=bend(x,y);var seg=Math.floor(y/gap)%2===c%2;
-        if(y===0||!seg){cx.moveTo(x+o[0],y+o[1])}else{cx.lineTo(x+o[0],y+o[1])}}
-      cx.stroke();
-    }
-    cx.globalAlpha=1;
-  }
-  function move(e){var r=cv.getBoundingClientRect();var t=e.touches?e.touches[0]:e;mx=t.clientX-r.left;my=t.clientY-r.top;if(!raf)raf=requestAnimationFrame(function(){raf=null;draw()})}
-  function leave(){mx=my=-999;draw()}
-  if(!reduce){var hero=cv.parentNode;hero.addEventListener('pointermove',move);hero.addEventListener('pointerleave',leave);hero.addEventListener('touchmove',move,{passive:true});hero.addEventListener('touchend',leave)}
-  window.addEventListener('resize',size);
-  colors();size();
+var KB=[
+[/cern|lhcb|geneva|سيرن/,"At CERN I was a Summer Student in the LHCb team (Jun to Aug 2025). The project was a chatbot that answers technical questions about the LHCb experiment, working alongside CERN IT's GenAI platform. I researched how to collect up-to-date documentation from the web into a vector knowledge database and keep it current, and implemented parts of it. I was also 1 of 36 selected worldwide for the CERN Quantum Computing Hackathon.","في CERN كنت طالبة صيفية ضمن فريق LHCb (يونيو إلى أغسطس 2025). كان المشروع مساعداً ذكياً يجيب عن أسئلة تقنية حول تجربة LHCb بالتعاون مع منصة الذكاء الاصطناعي التوليدي في قسم تقنية المعلومات بـ CERN. بحثت كيف نجمع التوثيق الحديث من الويب في قاعدة معرفة متجهية ونبقيها محدّثة، ونفذت أجزاء منه. وكنت واحدة من 36 طالباً مختارين عالمياً لهاكاثون الحوسبة الكمية."],
+[/neuro|brain|eeg|دماغ|نيورو/,"NeuroEgo is my idea for a device that turns brain signals into text, speech and commands for people with severe physical disabilities. It reached the Mastercard Financial Inclusion final. I have not built the device. In my bootcamp capstone I am building a software prototype: a Random Forest on a public EEG dataset (98.8% test accuracy) with a Streamlit demo on recorded signals.","NeuroEgo فكرتي لجهاز يحوّل الموجات الدماغية إلى نص وصوت وأوامر لذوي الإعاقة الحركية الشديدة، ووصلت إلى نهائيات ماستركارد. لم أبنِ الجهاز بعد. في مشروع التخرج أبني نموذجاً برمجياً: غابة عشوائية على بيانات EEG عامة بدقة اختبار 98.8% مع واجهة Streamlit على بيانات مسجلة."],
+[/bank|fintech|finance|بنك|مصرف|مالي/,"Banking is where mathematics meets decisions that affect people's lives. I built a Java and SQL transaction system and SmartBank, a Python analytics platform, and my Mastercard challenge work was about financial inclusion. My next step is a data scientist role in banking.","القطاع المصرفي هو المكان الذي تلتقي فيه الرياضيات بقرارات تمس حياة الناس. بنيت نظام معاملات بجافا وSQL ومنصة SmartBank بباثون، وعملي في تحدي ماستركارد كان عن الشمول المالي. خطوتي القادمة وظيفة عالمة بيانات في البنوك."],
+[/project|work|yolo|food|currency|doodle|مشاريع|اعمال|أعمال/,"My recent work: a YOLO detector for ten Bahraini dishes, a Bahraini dinar note classifier with transfer learning, a doodle search engine on Keras embeddings, a sentiment and zero-shot analysis of Bahrain restaurant reviews, and my NeuroEgo capstone.","من أعمالي الأخيرة: كاشف YOLO لعشرة أطباق بحرينية، ومصنّف لأوراق الدينار البحريني بالتعلم بالنقل، ومحرك بحث عن الرسومات، وتحليل مشاعر آراء المطاعم في البحرين، ومشروع NeuroEgo."],
+[/skill|tech|python|java|sql|stack|مهارات|لغات/,"Python, Java, SQL, JavaScript, PHP and MATLAB; MySQL and SQLite; Linux shell, Git and Agile. In data science: scikit-learn, deep learning with PyTorch and Keras, YOLO, Hugging Face and Streamlit.","بايثون وجافا وSQL وجافاسكربت وPHP وMATLAB؛ وقواعد MySQL وSQLite؛ ولينكس وGit وAgile. وفي علم البيانات: scikit-learn والتعلم العميق بPyTorch وKeras وYOLO وHugging Face وStreamlit."],
+[/lead|parliament|council|committee|قياد|برلمان|لجنة/,"I chair the Student Advisory Committee in the Mathematics department, sit on the Student Council, and completed the seven-month Young Parliamentarians Program, where I was rapporteur and representative for several committees.","أرأس اللجنة الاستشارية الطلابية في قسم الرياضيات، وأنا عضو في مجلس الطلبة، وأكملت برنامج الشاب البرلماني لسبعة أشهر وكنت فيه مقرّرة وممثلة لعدة لجان."],
+[/goal|future|ambassador|plan|next|هدف|مستقبل|سفير/,"My long-term goal is to be an ambassador for science and technology. The next step is a data scientist role in the banking industry, where I can apply mathematics and machine learning at scale.","هدفي الأكبر أن أكون سفيرة للعلوم والتكنولوجيا. وخطوتي القادمة وظيفة عالمة بيانات في القطاع المصرفي، لأطبق الرياضيات وتعلم الآلة على نطاق واسع."],
+[/gpa|grade|معدل|درجات/,"I graduated from the University of Bahrain in June 2026 with a B.Sc. in Mathematics (minor in Computer Science) and a GPA above 3.0 out of 4.0.","تخرجت من جامعة البحرين في يونيو 2026 ببكالوريوس رياضيات (تخصص فرعي علوم حاسوب) ومعدل أعلى من 3 من 4."],
+[/cheetah|brand|abaya|عباي|براند/,"Cheetah is my own label of abayas, blazers and formal pieces I design, with hand embroidery and painting. It is launching soon: @cheetah.bhr.","Cheetah علامتي الخاصة للعبايات والبليزرات والقطع الرسمية بتصميمي مع تطريز ورسم يدوي. ستنطلق قريباً: @cheetah.bhr."],
+[/contact|hire|email|reach|تواصل|توظيف|ايميل/,"The best way to reach me is email: "+CFG.email+".","أفضل طريقة للتواصل معي عبر البريد: "+CFG.email+"."],
+[/who|about|yourself|intro|مين|من هي|عن نفسك|نبراس/,"I am Nebras Jafail, a Mathematics graduate (minor in Computer Science) from the University of Bahrain, now in a data science bootcamp. I was a CERN Summer Student and a Mastercard challenge finalist, and I want to build AI that helps people, starting in banking.","أنا نبراس جعفيل، خريجة رياضيات (تخصص فرعي علوم حاسوب) من جامعة البحرين، وأدرس الآن علم البيانات في بوتكامب. كنت طالبة صيفية في CERN ونهائية في تحدي ماستركارد، وأريد بناء ذكاء اصطناعي يخدم الناس، وأبدأ بالبنوك."]];
+var log=$("#log");
+function add(t,c){var d=document.createElement("div");d.className="m "+c;d.textContent=t;log.appendChild(d);log.scrollTop=log.scrollHeight}
+function local(q,L){var s=q.toLowerCase();for(var i=0;i<KB.length;i++)if(KB[i][0].test(s))return KB[i][L==="ar"?2:1];
+return L==="ar"?"لا أملك هذه المعلومة. جرّب السؤال عن CERN أو NeuroEgo أو أعمالي أو أهدافي، أو راسلني على "+CFG.email+".":"I do not have that information. Try asking about CERN, NeuroEgo, my projects or my goals, or email me at "+CFG.email+"."}
+function ask(q){q=q.trim();if(!q)return;var L=/[\u0600-\u06FF]/.test(q)?"ar":lang;add(q,"u");
+if(!CFG.chat){add(local(q,L),"b");return}
+fetch(CFG.chat,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({question:q,lang:L})}).then(function(r){return r.json()}).then(function(d){add(d.answer||local(q,L),"b")}).catch(function(){add(local(q,L),"b")})}
+$("#f").onsubmit=function(e){e.preventDefault();var i=$("#q");ask(i.value);i.value=""};
+document.querySelectorAll(".chips button").forEach(function(b){b.onclick=function(){ask(b.textContent)}});
+add("Hi, I am Nebras's AI twin. Ask me about her work, skills or goals.","b");
 })();
 </script>
 </body>
