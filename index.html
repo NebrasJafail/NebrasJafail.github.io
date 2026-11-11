@@ -57,7 +57,11 @@ dialog{border:1px solid var(--gold);background:var(--bg);color:var(--ink);paddin
 .note{font-size:.88rem;color:var(--muted);margin:10px 0 0}
 .orbs{display:flex;flex-wrap:wrap;gap:24px;padding-bottom:34px}.orb{position:relative;width:68px;height:68px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);text-decoration:none;transition:transform .3s,background .3s,color .3s,box-shadow .3s}.orb:hover,.orb:focus-visible{background:var(--gold);color:var(--bg);transform:translateY(-6px);box-shadow:0 10px 28px color-mix(in srgb,var(--gold) 45%,transparent)}.orb span{position:absolute;top:calc(100% + 10px);font-size:.85rem;color:var(--muted);white-space:nowrap}
 footer{margin-top:80px;padding:26px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.93rem}
-@media(max-width:700px){nav{display:none}}
+html{-webkit-text-size-adjust:100%}body{overflow-x:hidden}img,canvas,svg{max-width:100%}
+@supports not (background:color-mix(in srgb,red,blue)){header{background:var(--bg)}}
+@media(max-width:700px){header .w{padding-top:6px;padding-bottom:6px}nav{order:3;width:100%;overflow-x:auto;white-space:nowrap}section{padding-top:56px}.hero .w{gap:24px}.ph{width:150px;height:190px}.recog li{border-inline-end:0;border-bottom:1px solid var(--line)}.m{max-width:96%}.chat{padding:12px}.roles li{padding:0 14px}}
+@media(max-width:380px){.sm{padding:6px 9px}h1{font-size:2.7rem}.orbs{gap:16px}.din{padding:22px}}
+@media(min-width:1500px){html{font-size:112.5%}.w{max-width:1080px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
@@ -65,29 +69,29 @@ footer{margin-top:80px;padding:26px 0 40px;border-top:1px solid var(--line);colo
 <header><div class="w"><a class="brand" href="#top">Nebras Jafail</a>
 <nav aria-label="Main"><a href="#about" data-ar="عني">About</a><a href="#journey" data-ar="رحلتي">Journey</a><a href="#work" data-ar="أعمالي">Work</a><a href="#voices" data-ar="شهادات">Voices</a><a href="#ask" data-ar="اسأل">Ask</a></nav>
 <div><button class="sm" id="langBtn" type="button">عربي</button><button class="sm" id="themeBtn" type="button" aria-pressed="true">Dark</button></div></div></header>
-
+ 
 <div class="hero" id="top"><div class="spots"></div><div class="glow"></div><div class="w">
 <div class="ht"><h1>Nebras Jafail</h1>
 <p class="mean" data-ar="نبراس: شعلة مضيئة ونور يهدي الطريق">Nebras (نبراس): a shining flame, a guiding light.</p>
 <p data-ar="رياضيّة تتحول إلى عالمة بيانات. أبني ذكاءً اصطناعياً يخدم الناس، وخطوتي القادمة علم البيانات في القطاع المصرفي.">A mathematician turning into a data scientist. I build AI that helps people, and my next step is data science in banking.</p>
 <a class="btn" href="#ask" data-ar="اسأل نسختي الذكية">Ask my AI twin</a><a class="btn o" id="cv" href="#" data-ar="حمّل السيرة الذاتية">Download CV</a></div>
 <div class="ph"><img src="images/profile.jpg" alt="Nebras Jafail" onerror="this.parentNode.remove()"></div></div></div>
-
+ 
 <ul class="recog">
 <li><b>CERN, LHCb</b><span data-ar="برنامج الطلبة الصيفي 2025، من أفضل طالبتين على مستوى البحرين">Summer Student 2025, top 2 selected nationwide</span></li>
 <li><b>1 of 36</b><span data-ar="من أكثر من 300 طالب في هاكاثون الحوسبة الكمية في CERN">worldwide, from 300+ in the CERN Quantum Computing Hackathon</span></li>
 <li><b>Mastercard</b><span data-ar="نهائيات تحدي الشمول المالي، وبعدها منحة تدريب لمدة سنة">Financial Inclusion Challenge finalist, one-year Academy scholarship</span></li>
 <li><b data-ar="أكثر من 3 من 4">Above 3.0 / 4.0</b><span data-ar="بكالوريوس رياضيات، تخصص فرعي علوم حاسوب، جامعة البحرين">B.Sc. Mathematics, minor Computer Science, University of Bahrain</span></li></ul>
-
+ 
 <section id="vision"><div class="w"><h2 data-ar="إلى أين أتجه">Where I am heading</h2>
 <ul class="roles"><li data-ar="سفيرة">Ambassador</li><li data-ar="دبلوماسية">Diplomat</li><li data-ar="مبتكرة">Innovator</li><li data-ar="عالمة">Scientist</li><li data-ar="رائدة أعمال">Entrepreneur</li></ul>
 <p data-ar="أريد أن أكون سفيرة للعلوم والتكنولوجيا، وأن يكون لعملي أثر في المستقبل.">I want to be an ambassador for science and technology, and to leave a lasting impact on the future.</p>
 <p style="margin-top:1.6rem"><button type="button" id="deepBtn" class="spotbtn" aria-haspopup="dialog"><i></i><span data-ar="من يريد أن يعرف شخصيتي أعمق، فليدخل هنا">Want to know me beyond the CV? Step inside.</span></button></p>
-
+ 
 <section id="about"><div class="w"><h2 data-ar="عني">About</h2>
 <p data-ar="عمري تسع سنوات حين قررت أن أكرّس مستقبلي للرياضيات. كثيرون قالوا إنني أصغر من أن أصنع فرقاً، فاخترت أن أكتب قصتي بنفسي، بالأرقام والأحلام.">I was nine when I decided to give my future to mathematics. Many people told me I was too young to make a difference, so I chose to write my own story, with numbers and dreams.</p>
 <p data-ar="اكتشفت علم البيانات فوجدته امتداداً طبيعياً لشغفي: الدقة الرياضية مع حل مشكلات حقيقية. هدفي الأكبر أن أكون سفيرة للعلوم والتكنولوجيا، وأبدأ بعلم البيانات في البنوك.">Data science became the natural extension of that passion: mathematical rigor applied to real problems. My long-term goal is to be an ambassador for science and technology, starting as a data scientist in banking.</p></div></section>
-
+ 
 <section id="journey"><div class="w"><h2 data-ar="رحلتي">Journey</h2><ol class="tl" style="list-style:none">
 <li><time>May – Nov 2024</time><h3>Young Parliamentarians Program</h3><p data-ar="سبعة أشهر مع مجلس الشورى والسفارة البريطانية والاتحاد الأوروبي، وكنت مقرّرة وممثلة لعدة لجان.">Seven months with the Shura Council, the British Embassy and the EU. Rapporteur and representative for several committees.</p></li>
 <li><time>Aug – Oct 2024</time><h3>Mastercard Financial Inclusion Challenge</h3><p data-ar="وصلت فكرتي NeuroEgo إلى النهائيات ضمن أفضل 5 حلول، وقدمتها أمام لجنة تضم Jeffrey Sachs.">My idea NeuroEgo reached the final as one of the top 5 solutions, pitched to a panel including Prof. Jeffrey Sachs.</p></li>
@@ -95,7 +99,7 @@ footer{margin-top:80px;padding:26px 0 40px;border-top:1px solid var(--line);colo
 <li><time>Jun – Aug 2025</time><h3>CERN Summer Student, LHCb</h3><p data-ar="مشروع مساعد ذكي يجيب عن أسئلة تقنية حول تجربة LHCb، بالتعاون مع منصة الذكاء الاصطناعي التوليدي في قسم تقنية المعلومات بـ CERN. بحثت كيف نجمع التوثيق الحديث من الويب في قاعدة معرفة متجهية ونبقيها محدّثة، ونفذت أجزاء منه.">A chatbot that answers technical questions about the LHCb experiment, working alongside CERN IT's GenAI platform. I researched how to collect up-to-date documentation from the web into a vector knowledge database and keep it current, and implemented parts of it.</p></li>
 <li><time>Jul 2025</time><h3>CERN Quantum Computing Hackathon</h3><p data-ar="واحدة من 36 طالباً مختارين عالمياً.">One of 36 students selected worldwide.</p></li>
 <li><time>2026</time><h3>General Assembly Data Science Bootcamp</h3><p data-ar="تخرجت من جامعة البحرين في يونيو 2026، وأتعلم الآن تعلم الآلة والتعلم العميق بمشاريع تطبيقية.">Graduated from the University of Bahrain in June 2026, now learning machine learning and deep learning through applied projects.</p></li></ol></div></section>
-
+ 
 <section id="work"><div class="w"><h2 data-ar="أعمالي">Work</h2><div class="proj">
 <article><h3>NeuroEgo</h3><p data-ar="فكرة جهاز يحوّل الموجات الدماغية إلى نص وصوت وأوامر لذوي الإعاقة الحركية الشديدة. وصلت الفكرة إلى نهائيات ماستركارد، ولم يُبنَ الجهاز بعد. مشروع التخرج في البوتكامب يبني نموذجاً أولياً: غابة عشوائية على بيانات EEG عامة بدقة اختبار 98.8%، مع واجهة Streamlit على بيانات مسجلة بدون جهاز.">An assistive brain-computer interface idea that turns brain signals into text, speech and commands. The idea reached the Mastercard final; the device itself is not built. My bootcamp capstone builds a software prototype: a Random Forest on a public EEG dataset (98.8% test accuracy) with a Streamlit demo on recorded signals, no hardware.</p><span class="tag">Python · scikit-learn · Streamlit</span></article>
 <article><h3>Bahraini Food Detection</h3><p data-ar="نموذج YOLO مُدرَّب على صور جمعناها بأنفسنا لعشرة أطباق بحرينية، مع تحليل الأخطاء وجولة بيانات ثانية لتحسينه.">A YOLO model fine-tuned on our own dataset of ten Bahraini dishes, with error analysis and a second data round to improve it.</p><span class="tag">YOLO · Roboflow · Streamlit</span></article>
@@ -103,21 +107,21 @@ footer{margin-top:80px;padding:26px 0 40px;border-top:1px solid var(--line);colo
 <article><h3>Doodle Search &amp; Bahrain Reviews</h3><p data-ar="محرك بحث عن الرسومات بتمثيلات Keras، وتحليل مشاعر آراء مطاعم البحرين مع تصنيف بلا أمثلة سابقة عبر Hugging Face.">A doodle search engine on Keras embeddings, and sentiment plus zero-shot analysis of Bahrain restaurant reviews with Hugging Face.</p><span class="tag">Keras · Hugging Face</span></article>
 <article><h3>Banking Systems</h3><p data-ar="نظام معاملات بنكية بجافا وSQL وJDBC، ومنصة SmartBank لتحليل مؤشرات الحسابات بباثون. وبحثت في دمج طريقة نيوتن مع البحث الثنائي لدقة أعلى في نماذج التقييم المالي.">A Java, SQL and JDBC transaction system, and SmartBank, a Python platform for account KPIs. Also researched combining Newton's method with binary search for precise valuation models.</p><span class="tag">Java · Python · SQL</span></article></div>
 <p style="margin-top:1rem"><a id="gh" href="#" data-ar="كل الأكواد على GitHub">All code on GitHub</a></p></div></section>
-
+ 
 <section id="voices"><div class="w"><h2 data-ar="ماذا يقول عني أساتذتي">What my professors say</h2>
 <blockquote>“…an ambassador for science and woman leadership…”<cite>Dr. Babacar Seck, Assistant Professor of Mathematics, University of Bahrain</cite></blockquote>
 <blockquote>“…exceptional communication skills and leadership qualities.”<cite>Dr. Oliver Thomas, Department of Mathematics, University of Bahrain</cite></blockquote>
 <blockquote>“…exceptional problem-solving skills and creativity.”<cite>Dr. Mayada Shahada, Assistant Professor, University of Bahrain</cite></blockquote></div></section>
-
+ 
 <section id="ask"><div class="w"><h2 data-ar="اسأل نسختي الذكية">Ask my AI twin</h2>
 <div class="chat"><div id="log" aria-live="polite"></div>
 <div class="chips"><button type="button" data-ar="من هي نبراس؟">Who is Nebras?</button><button type="button" data-ar="ماذا فعلتِ في CERN؟">What did you do at CERN?</button><button type="button" data-ar="حدثيني عن NeuroEgo">Tell me about NeuroEgo</button><button type="button" data-ar="لماذا القطاع المصرفي؟">Why banking?</button></div>
 <form id="f"><input id="q" aria-label="Question" placeholder="Ask about my work, skills or goals" autocomplete="off"><button class="btn" style="margin:0" type="submit" data-ar="إرسال">Send</button></form>
 <p class="note" data-ar="نسخة ذكية تجيب من سيرتي ورسائلي فقط. إن لم تعرف الجواب ستقول ذلك.">An AI twin that answers only from my CV and letters. If it does not know, it says so.</p></div></div></section>
-
+ 
 <section><div class="w"><h2 data-ar="خارج الأكواد: Cheetah">Beyond code: Cheetah</h2>
 <p data-ar="Cheetah علامتي الخاصة للعبايات والبليزرات والبدلات الرسمية بتصميمي، مع تطريز ورسم يدوي. قريباً.">Cheetah is my own label of abayas, blazers and formal pieces I design, with hand embroidery and painting. Launching soon.</p><p><a id="ig" href="#">@cheetah.bhr</a></p></div></section>
-
+ 
 <section id="contact"><div class="w"><h2 data-ar="تواصل">Contact</h2><div class="orbs" id="cl"></div></div></section>
 <dialog id="deep" aria-labelledby="dt"><div class="din"><h2 id="dt" data-ar="ما وراء السيرة الذاتية">Beyond the CV</h2>
 <blockquote><span class="aq" lang="ar">والحظ لو عاثر بصنع أنا حظي 🐆</span><cite data-ar="">And if luck stumbles, I make my own luck.</cite></blockquote>
@@ -125,7 +129,7 @@ footer{margin-top:80px;padding:26px 0 40px;border-top:1px solid var(--line);colo
 <blockquote><span class="aq" lang="ar">متى يبين اسمي أكون في واقعي بصمة وأثر</span><cite data-ar="">Wherever my name appears, I want to be a mark and an impact in reality.</cite></blockquote></div></section>
 <button class="sm" id="dx" type="button" data-ar="إغلاق">Close</button></div></dialog>
 <footer><div class="w">© 2026 Nebras Ali Jafail</div></footer>
-
+ 
 <script>
 (function(){
 var CFG={cv:"Nebras_Jafail_CV.pdf",linkedin:"",github:"https://github.com/NebrasJafail",instagram:"https://instagram.com/cheetah.bhr",email:"nebrasjafail@gmail.com",chat:""};
@@ -139,7 +143,7 @@ var tb=$("#themeBtn");function setTheme(t){root.dataset.theme=t;tb.textContent=t
 tb.onclick=function(){setTheme(root.dataset.theme==="dark"?"light":"dark")};
 try{var t=localStorage.getItem("theme"),l=localStorage.getItem("lang");if(t)setTheme(t);if(l==="ar")setLang("ar")}catch(x){}
 var hero=$(".hero");hero.addEventListener("pointermove",function(e){var r=hero.getBoundingClientRect();hero.style.setProperty("--mx",e.clientX-r.left+"px");hero.style.setProperty("--my",e.clientY-r.top+"px")});
-
+ 
 var KB=[
 [/cern|lhcb|geneva|سيرن/,"At CERN I was a Summer Student in the LHCb team (Jun to Aug 2025). The project was a chatbot that answers technical questions about the LHCb experiment, working alongside CERN IT's GenAI platform. I researched how to collect up-to-date documentation from the web into a vector knowledge database and keep it current, and implemented parts of it. I was also 1 of 36 selected worldwide for the CERN Quantum Computing Hackathon.","في CERN كنت طالبة صيفية ضمن فريق LHCb (يونيو إلى أغسطس 2025). كان المشروع مساعداً ذكياً يجيب عن أسئلة تقنية حول تجربة LHCb بالتعاون مع منصة الذكاء الاصطناعي التوليدي في قسم تقنية المعلومات بـ CERN. بحثت كيف نجمع التوثيق الحديث من الويب في قاعدة معرفة متجهية ونبقيها محدّثة، ونفذت أجزاء منه. وكنت واحدة من 36 طالباً مختارين عالمياً لهاكاثون الحوسبة الكمية."],
 [/neuro|brain|eeg|دماغ|نيورو/,"NeuroEgo is my idea for a device that turns brain signals into text, speech and commands for people with severe physical disabilities. It reached the Mastercard Financial Inclusion final. I have not built the device. In my bootcamp capstone I am building a software prototype: a Random Forest on a public EEG dataset (98.8% test accuracy) with a Streamlit demo on recorded signals.","NeuroEgo فكرتي لجهاز يحوّل الموجات الدماغية إلى نص وصوت وأوامر لذوي الإعاقة الحركية الشديدة، ووصلت إلى نهائيات ماستركارد. لم أبنِ الجهاز بعد. في مشروع التخرج أبني نموذجاً برمجياً: غابة عشوائية على بيانات EEG عامة بدقة اختبار 98.8% مع واجهة Streamlit على بيانات مسجلة."],
