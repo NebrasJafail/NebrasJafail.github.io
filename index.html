@@ -54,6 +54,7 @@ blockquote cite{display:block;font:400 .95rem var(--sans);color:var(--muted);mar
 .aq{display:block;direction:rtl;text-align:left}[dir=rtl] .aq{text-align:right}
 .spotbtn{display:inline-flex;align-items:center;gap:12px;background:none;border:1px solid var(--gold);color:var(--ink);border-radius:999px;padding:8px 20px 8px 10px}.spotbtn:hover{background:var(--panel)}.spotbtn i{width:30px;height:30px;border-radius:50%;border:1px solid var(--line);background:radial-gradient(circle at 30% 35%,var(--gold) 0 3px,transparent 4px),radial-gradient(circle at 68% 62%,var(--gold) 0 4px,transparent 5px),radial-gradient(circle at 40% 78%,var(--gold) 0 2px,transparent 3px)}
 dialog{border:1px solid var(--gold);background:var(--bg);color:var(--ink);padding:0;width:min(640px,92vw);max-height:90vh;border-radius:6px}dialog::backdrop{background:rgba(10,3,6,.78)}.din{position:relative;padding:34px;overflow:hidden}.din::before{content:"";position:absolute;inset:0;opacity:.17;background:radial-gradient(circle at 25% 30%,var(--gold) 0 7px,transparent 8px) 0 0/97px 83px,radial-gradient(circle at 70% 65%,var(--gold) 0 4px,transparent 5px) 0 0/61px 71px,radial-gradient(circle at 40% 80%,var(--gold) 0 9px,transparent 10px) 0 0/131px 117px}.din>*{position:relative}
+.hr{display:flex;align-items:center;flex-wrap:wrap;gap:2px}.hl{display:inline-flex;gap:8px;margin-inline-end:8px}.hl .orb{width:38px;height:38px}.hl .orb svg{width:18px;height:18px}.hl .orb span{display:none}.hl .orb:hover,.hl .orb:focus-visible{transform:translateY(-2px)}
 .note{font-size:.88rem;color:var(--muted);margin:10px 0 0}
 .orbs{display:flex;flex-wrap:wrap;gap:24px;padding-bottom:34px}.orb{position:relative;width:68px;height:68px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);text-decoration:none;transition:transform .3s,background .3s,color .3s,box-shadow .3s}.orb:hover,.orb:focus-visible{background:var(--gold);color:var(--bg);transform:translateY(-6px);box-shadow:0 10px 28px color-mix(in srgb,var(--gold) 45%,transparent)}.orb span{position:absolute;top:calc(100% + 10px);font-size:.85rem;color:var(--muted);white-space:nowrap}
 footer{margin-top:80px;padding:26px 0 40px;border-top:1px solid var(--line);color:var(--muted);font-size:.93rem}
@@ -68,30 +69,21 @@ html{-webkit-text-size-adjust:100%}body{overflow-x:hidden}img,canvas,svg{max-wid
 <body>
 <header><div class="w"><a class="brand" href="#top">Nebras Jafail</a>
 <nav aria-label="Main"><a href="#about" data-ar="عني">About</a><a href="#journey" data-ar="رحلتي">Journey</a><a href="#work" data-ar="أعمالي">Work</a><a href="#voices" data-ar="شهادات">Voices</a><a href="#ask" data-ar="اسأل">Ask</a></nav>
-<div><button class="sm" id="langBtn" type="button">عربي</button><button class="sm" id="themeBtn" type="button" aria-pressed="true">Dark</button></div></div></header>
- 
+<div class="hr"><span class="hl" id="hl"></span><button class="sm" id="langBtn" type="button">عربي</button><button class="sm" id="themeBtn" type="button" aria-pressed="true">Dark</button></div></div></header>
+
 <div class="hero" id="top"><div class="spots"></div><div class="glow"></div><div class="w">
 <div class="ht"><h1>Nebras Jafail</h1>
 <p class="mean" data-ar="نبراس: شعلة مضيئة ونور يهدي الطريق">Nebras (نبراس): a shining flame, a guiding light.</p>
 <p data-ar="رياضيّة تتحول إلى عالمة بيانات. أبني ذكاءً اصطناعياً يخدم الناس، وخطوتي القادمة علم البيانات في القطاع المصرفي.">A mathematician turning into a data scientist. I build AI that helps people, and my next step is data science in banking.</p>
-<a class="btn" href="#ask" data-ar="اسأل نسختي الذكية">Ask my AI twin</a><a class="btn o" id="cv" href="#" data-ar="حمّل السيرة الذاتية">Download CV</a></div>
+<a class="btn" href="#ask" data-ar="اسأل نسختي الذكية">Ask my AI twin</a></div>
 <div class="ph"><img src="images/profile.jpg" alt="Nebras Jafail" onerror="this.parentNode.remove()"></div></div></div>
- 
+
 <ul class="recog">
 <li><b>CERN, LHCb</b><span data-ar="برنامج الطلبة الصيفي 2025، من أفضل طالبتين على مستوى البحرين">Summer Student 2025, top 2 selected nationwide</span></li>
 <li><b>1 of 36</b><span data-ar="من أكثر من 300 طالب في هاكاثون الحوسبة الكمية في CERN">worldwide, from 300+ in the CERN Quantum Computing Hackathon</span></li>
 <li><b>Mastercard</b><span data-ar="نهائيات تحدي الشمول المالي، وبعدها منحة تدريب لمدة سنة">Financial Inclusion Challenge finalist, one-year Academy scholarship</span></li>
 <li><b data-ar="أكثر من 3 من 4">Above 3.0 / 4.0</b><span data-ar="بكالوريوس رياضيات، تخصص فرعي علوم حاسوب، جامعة البحرين">B.Sc. Mathematics, minor Computer Science, University of Bahrain</span></li></ul>
- 
-<section id="vision"><div class="w"><h2 data-ar="إلى أين أتجه">Where I am heading</h2>
-<ul class="roles"><li data-ar="سفيرة">Ambassador</li><li data-ar="دبلوماسية">Diplomat</li><li data-ar="مبتكرة">Innovator</li><li data-ar="عالمة">Scientist</li><li data-ar="رائدة أعمال">Entrepreneur</li></ul>
-<p data-ar="أريد أن أكون سفيرة للعلوم والتكنولوجيا، وأن يكون لعملي أثر في المستقبل.">I want to be an ambassador for science and technology, and to leave a lasting impact on the future.</p>
-<p style="margin-top:1.6rem"><button type="button" id="deepBtn" class="spotbtn" aria-haspopup="dialog"><i></i><span data-ar="من يريد أن يعرف شخصيتي أعمق، فليدخل هنا">Want to know me beyond the CV? Step inside.</span></button></p>
- 
-<section id="about"><div class="w"><h2 data-ar="عني">About</h2>
-<p data-ar="عمري تسع سنوات حين قررت أن أكرّس مستقبلي للرياضيات. كثيرون قالوا إنني أصغر من أن أصنع فرقاً، فاخترت أن أكتب قصتي بنفسي، بالأرقام والأحلام.">I was nine when I decided to give my future to mathematics. Many people told me I was too young to make a difference, so I chose to write my own story, with numbers and dreams.</p>
-<p data-ar="اكتشفت علم البيانات فوجدته امتداداً طبيعياً لشغفي: الدقة الرياضية مع حل مشكلات حقيقية. هدفي الأكبر أن أكون سفيرة للعلوم والتكنولوجيا، وأبدأ بعلم البيانات في البنوك.">Data science became the natural extension of that passion: mathematical rigor applied to real problems. My long-term goal is to be an ambassador for science and technology, starting as a data scientist in banking.</p></div></section>
- 
+
 <section id="journey"><div class="w"><h2 data-ar="رحلتي">Journey</h2><ol class="tl" style="list-style:none">
 <li><time>May – Nov 2024</time><h3>Young Parliamentarians Program</h3><p data-ar="سبعة أشهر مع مجلس الشورى والسفارة البريطانية والاتحاد الأوروبي، وكنت مقرّرة وممثلة لعدة لجان.">Seven months with the Shura Council, the British Embassy and the EU. Rapporteur and representative for several committees.</p></li>
 <li><time>Aug – Oct 2024</time><h3>Mastercard Financial Inclusion Challenge</h3><p data-ar="وصلت فكرتي NeuroEgo إلى النهائيات ضمن أفضل 5 حلول، وقدمتها أمام لجنة تضم Jeffrey Sachs.">My idea NeuroEgo reached the final as one of the top 5 solutions, pitched to a panel including Prof. Jeffrey Sachs.</p></li>
@@ -99,7 +91,16 @@ html{-webkit-text-size-adjust:100%}body{overflow-x:hidden}img,canvas,svg{max-wid
 <li><time>Jun – Aug 2025</time><h3>CERN Summer Student, LHCb</h3><p data-ar="مشروع مساعد ذكي يجيب عن أسئلة تقنية حول تجربة LHCb، بالتعاون مع منصة الذكاء الاصطناعي التوليدي في قسم تقنية المعلومات بـ CERN. بحثت كيف نجمع التوثيق الحديث من الويب في قاعدة معرفة متجهية ونبقيها محدّثة، ونفذت أجزاء منه.">A chatbot that answers technical questions about the LHCb experiment, working alongside CERN IT's GenAI platform. I researched how to collect up-to-date documentation from the web into a vector knowledge database and keep it current, and implemented parts of it.</p></li>
 <li><time>Jul 2025</time><h3>CERN Quantum Computing Hackathon</h3><p data-ar="واحدة من 36 طالباً مختارين عالمياً.">One of 36 students selected worldwide.</p></li>
 <li><time>2026</time><h3>General Assembly Data Science Bootcamp</h3><p data-ar="تخرجت من جامعة البحرين في يونيو 2026، وأتعلم الآن تعلم الآلة والتعلم العميق بمشاريع تطبيقية.">Graduated from the University of Bahrain in June 2026, now learning machine learning and deep learning through applied projects.</p></li></ol></div></section>
- 
+
+<section id="vision"><div class="w"><h2 data-ar="الفصل القادم">The next chapter</h2>
+<ul class="roles"><li data-ar="سفيرة">Ambassador</li><li data-ar="دبلوماسية">Diplomat</li><li data-ar="مبتكرة">Innovator</li><li data-ar="عالمة">Scientist</li><li data-ar="رائدة أعمال">Entrepreneur</li></ul>
+<p data-ar="أريد أن أكون سفيرة للعلوم والتكنولوجيا، وأن يكون لعملي أثر في المستقبل.">I want to be an ambassador for science and technology, and to leave a lasting impact on the future.</p>
+<p style="margin-top:1.6rem"><button type="button" id="deepBtn" class="spotbtn" aria-haspopup="dialog"><i></i><span data-ar="من يريد أن يعرف شخصيتي أعمق، فليدخل هنا">Want to know me beyond the CV? Step inside.</span></button></p>
+
+<section id="about"><div class="w"><h2 data-ar="عني">About</h2>
+<p data-ar="عمري تسع سنوات حين قررت أن أكرّس مستقبلي للرياضيات. كثيرون قالوا إنني أصغر من أن أصنع فرقاً، فاخترت أن أكتب قصتي بنفسي، بالأرقام والأحلام.">I was nine when I decided to give my future to mathematics. Many people told me I was too young to make a difference, so I chose to write my own story, with numbers and dreams.</p>
+<p data-ar="اكتشفت علم البيانات فوجدته امتداداً طبيعياً لشغفي: الدقة الرياضية مع حل مشكلات حقيقية. هدفي الأكبر أن أكون سفيرة للعلوم والتكنولوجيا، وأبدأ بعلم البيانات في البنوك.">Data science became the natural extension of that passion: mathematical rigor applied to real problems. My long-term goal is to be an ambassador for science and technology, starting as a data scientist in banking.</p></div></section>
+
 <section id="work"><div class="w"><h2 data-ar="أعمالي">Work</h2><div class="proj">
 <article><h3>NeuroEgo</h3><p data-ar="فكرة جهاز يحوّل الموجات الدماغية إلى نص وصوت وأوامر لذوي الإعاقة الحركية الشديدة. وصلت الفكرة إلى نهائيات ماستركارد، ولم يُبنَ الجهاز بعد. مشروع التخرج في البوتكامب يبني نموذجاً أولياً: غابة عشوائية على بيانات EEG عامة بدقة اختبار 98.8%، مع واجهة Streamlit على بيانات مسجلة بدون جهاز.">An assistive brain-computer interface idea that turns brain signals into text, speech and commands. The idea reached the Mastercard final; the device itself is not built. My bootcamp capstone builds a software prototype: a Random Forest on a public EEG dataset (98.8% test accuracy) with a Streamlit demo on recorded signals, no hardware.</p><span class="tag">Python · scikit-learn · Streamlit</span></article>
 <article><h3>Bahraini Food Detection</h3><p data-ar="نموذج YOLO مُدرَّب على صور جمعناها بأنفسنا لعشرة أطباق بحرينية، مع تحليل الأخطاء وجولة بيانات ثانية لتحسينه.">A YOLO model fine-tuned on our own dataset of ten Bahraini dishes, with error analysis and a second data round to improve it.</p><span class="tag">YOLO · Roboflow · Streamlit</span></article>
@@ -107,43 +108,42 @@ html{-webkit-text-size-adjust:100%}body{overflow-x:hidden}img,canvas,svg{max-wid
 <article><h3>Doodle Search &amp; Bahrain Reviews</h3><p data-ar="محرك بحث عن الرسومات بتمثيلات Keras، وتحليل مشاعر آراء مطاعم البحرين مع تصنيف بلا أمثلة سابقة عبر Hugging Face.">A doodle search engine on Keras embeddings, and sentiment plus zero-shot analysis of Bahrain restaurant reviews with Hugging Face.</p><span class="tag">Keras · Hugging Face</span></article>
 <article><h3>Banking Systems</h3><p data-ar="نظام معاملات بنكية بجافا وSQL وJDBC، ومنصة SmartBank لتحليل مؤشرات الحسابات بباثون. وبحثت في دمج طريقة نيوتن مع البحث الثنائي لدقة أعلى في نماذج التقييم المالي.">A Java, SQL and JDBC transaction system, and SmartBank, a Python platform for account KPIs. Also researched combining Newton's method with binary search for precise valuation models.</p><span class="tag">Java · Python · SQL</span></article></div>
 <p style="margin-top:1rem"><a id="gh" href="#" data-ar="كل الأكواد على GitHub">All code on GitHub</a></p></div></section>
- 
+
 <section id="voices"><div class="w"><h2 data-ar="ماذا يقول عني أساتذتي">What my professors say</h2>
 <blockquote>“…an ambassador for science and woman leadership…”<cite>Dr. Babacar Seck, Assistant Professor of Mathematics, University of Bahrain</cite></blockquote>
 <blockquote>“…exceptional communication skills and leadership qualities.”<cite>Dr. Oliver Thomas, Department of Mathematics, University of Bahrain</cite></blockquote>
 <blockquote>“…exceptional problem-solving skills and creativity.”<cite>Dr. Mayada Shahada, Assistant Professor, University of Bahrain</cite></blockquote></div></section>
- 
+
 <section id="ask"><div class="w"><h2 data-ar="اسأل نسختي الذكية">Ask my AI twin</h2>
 <div class="chat"><div id="log" aria-live="polite"></div>
 <div class="chips"><button type="button" data-ar="من هي نبراس؟">Who is Nebras?</button><button type="button" data-ar="ماذا فعلتِ في CERN؟">What did you do at CERN?</button><button type="button" data-ar="حدثيني عن NeuroEgo">Tell me about NeuroEgo</button><button type="button" data-ar="لماذا القطاع المصرفي؟">Why banking?</button></div>
 <form id="f"><input id="q" aria-label="Question" placeholder="Ask about my work, skills or goals" autocomplete="off"><button class="btn" style="margin:0" type="submit" data-ar="إرسال">Send</button></form>
 <p class="note" data-ar="نسخة ذكية تجيب من سيرتي ورسائلي فقط. إن لم تعرف الجواب ستقول ذلك.">An AI twin that answers only from my CV and letters. If it does not know, it says so.</p></div></div></section>
- 
+
 <section><div class="w"><h2 data-ar="خارج الأكواد: Cheetah">Beyond code: Cheetah</h2>
 <p data-ar="Cheetah علامتي الخاصة للعبايات والبليزرات والبدلات الرسمية بتصميمي، مع تطريز ورسم يدوي. قريباً.">Cheetah is my own label of abayas, blazers and formal pieces I design, with hand embroidery and painting. Launching soon.</p><p><a id="ig" href="#">@cheetah.bhr</a></p></div></section>
- 
-<section id="contact"><div class="w"><h2 data-ar="تواصل">Contact</h2><div class="orbs" id="cl"></div></div></section>
+
 <dialog id="deep" aria-labelledby="dt"><div class="din"><h2 id="dt" data-ar="ما وراء السيرة الذاتية">Beyond the CV</h2>
 <blockquote><span class="aq" lang="ar">والحظ لو عاثر بصنع أنا حظي 🐆</span><cite data-ar="">And if luck stumbles, I make my own luck.</cite></blockquote>
 <blockquote><span class="aq" lang="ar">وكن لنفسك كل شيء</span><cite data-ar="">Be everything to yourself.</cite></blockquote>
 <blockquote><span class="aq" lang="ar">متى يبين اسمي أكون في واقعي بصمة وأثر</span><cite data-ar="">Wherever my name appears, I want to be a mark and an impact in reality.</cite></blockquote></div></section>
 <button class="sm" id="dx" type="button" data-ar="إغلاق">Close</button></div></dialog>
 <footer><div class="w">© 2026 Nebras Ali Jafail</div></footer>
- 
+
 <script>
 (function(){
-var CFG={cv:"Nebras_Jafail_CV.pdf",linkedin:"",github:"https://github.com/NebrasJafail",instagram:"https://instagram.com/cheetah.bhr",email:"nebrasjafail@gmail.com",chat:""};
+var CFG={linkedin:"",github:"https://github.com/NebrasJafail",instagram:"https://instagram.com/cheetah.bhr",email:"nebrasjafail@gmail.com",chat:""};
 var $=function(s){return document.querySelector(s)},root=document.documentElement,lang="en";
-$("#cv").href=CFG.cv;$("#gh").href=CFG.github;$("#ig").href=CFG.instagram;
+$("#gh").href=CFG.github;$("#ig").href=CFG.instagram;
 var I={Email:'<path d="M3 5h18v14H3zM3 6l9 7 9-7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>',GitHub:'<path fill="currentColor" d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.38 7.86 10.9.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.05-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/>',LinkedIn:'<path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/>',Instagram:'<g fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/>'};
-var cl=$("#cl");[["Email","mailto:"+CFG.email],["LinkedIn",CFG.linkedin],["GitHub",CFG.github],["Instagram",CFG.instagram]].forEach(function(c){if(!c[1])return;var a=document.createElement("a");a.className="orb";a.href=c[1];a.setAttribute("aria-label",c[0]);if(c[0]!=="Email"){a.target="_blank";a.rel="noopener"}a.innerHTML='<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">'+I[c[0]]+"</svg><span>"+c[0]+"</span>";cl.appendChild(a)});
+var cl=document.createDocumentFragment();[["Email","mailto:"+CFG.email],["LinkedIn",CFG.linkedin],["GitHub",CFG.github],["Instagram",CFG.instagram]].forEach(function(c){if(!c[1])return;var a=document.createElement("a");a.className="orb";a.href=c[1];a.setAttribute("aria-label",c[0]);if(c[0]!=="Email"){a.target="_blank";a.rel="noopener"}a.innerHTML='<svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">'+I[c[0]]+"</svg><span>"+c[0]+"</span>";cl.appendChild(a);var b=a.cloneNode(true);b.title=c[0];$("#hl").appendChild(b)});
 function setLang(l){lang=l;root.lang=l;root.dir=l==="ar"?"rtl":"ltr";document.querySelectorAll("[data-ar]").forEach(function(e){if(!e.dataset.en)e.dataset.en=e.textContent;e.textContent=l==="ar"?e.dataset.ar:e.dataset.en});$("#langBtn").textContent=l==="ar"?"English":"عربي";$("#q").placeholder=l==="ar"?"اسألي عن أعمالي ومهاراتي وأهدافي":"Ask about my work, skills or goals";try{localStorage.setItem("lang",l)}catch(x){}}
 $("#langBtn").onclick=function(){setLang(lang==="en"?"ar":"en")};var dd=$("#deep");$("#deepBtn").onclick=function(){dd.showModal()};$("#dx").onclick=function(){dd.close()};dd.addEventListener("click",function(e){if(e.target===dd)dd.close()});
 var tb=$("#themeBtn");function setTheme(t){root.dataset.theme=t;tb.textContent=t==="dark"?"Dark":"Light";tb.setAttribute("aria-pressed",t==="dark");try{localStorage.setItem("theme",t)}catch(x){}}
 tb.onclick=function(){setTheme(root.dataset.theme==="dark"?"light":"dark")};
 try{var t=localStorage.getItem("theme"),l=localStorage.getItem("lang");if(t)setTheme(t);if(l==="ar")setLang("ar")}catch(x){}
 var hero=$(".hero");hero.addEventListener("pointermove",function(e){var r=hero.getBoundingClientRect();hero.style.setProperty("--mx",e.clientX-r.left+"px");hero.style.setProperty("--my",e.clientY-r.top+"px")});
- 
+
 var KB=[
 [/cern|lhcb|geneva|سيرن/,"At CERN I was a Summer Student in the LHCb team (Jun to Aug 2025). The project was a chatbot that answers technical questions about the LHCb experiment, working alongside CERN IT's GenAI platform. I researched how to collect up-to-date documentation from the web into a vector knowledge database and keep it current, and implemented parts of it. I was also 1 of 36 selected worldwide for the CERN Quantum Computing Hackathon.","في CERN كنت طالبة صيفية ضمن فريق LHCb (يونيو إلى أغسطس 2025). كان المشروع مساعداً ذكياً يجيب عن أسئلة تقنية حول تجربة LHCb بالتعاون مع منصة الذكاء الاصطناعي التوليدي في قسم تقنية المعلومات بـ CERN. بحثت كيف نجمع التوثيق الحديث من الويب في قاعدة معرفة متجهية ونبقيها محدّثة، ونفذت أجزاء منه. وكنت واحدة من 36 طالباً مختارين عالمياً لهاكاثون الحوسبة الكمية."],
 [/neuro|brain|eeg|دماغ|نيورو/,"NeuroEgo is my idea for a device that turns brain signals into text, speech and commands for people with severe physical disabilities. It reached the Mastercard Financial Inclusion final. I have not built the device. In my bootcamp capstone I am building a software prototype: a Random Forest on a public EEG dataset (98.8% test accuracy) with a Streamlit demo on recorded signals.","NeuroEgo فكرتي لجهاز يحوّل الموجات الدماغية إلى نص وصوت وأوامر لذوي الإعاقة الحركية الشديدة، ووصلت إلى نهائيات ماستركارد. لم أبنِ الجهاز بعد. في مشروع التخرج أبني نموذجاً برمجياً: غابة عشوائية على بيانات EEG عامة بدقة اختبار 98.8% مع واجهة Streamlit على بيانات مسجلة."],
